@@ -40,6 +40,7 @@ const Tiendita = () => {
                     opt={{
                       progressive: true,
                       q: 90,
+                      o: 'webp',
                       rs: {
                         s: '282x292',
                       },
