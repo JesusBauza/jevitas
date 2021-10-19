@@ -6,7 +6,7 @@ const Page404: PageWithLayout = () => (
     <h1 className="font-bold text-fg-primary mb-4 text-8xl font-title">
       404
     </h1>
-    <p className="mb-6">Oops, esta página no existe</p>
+    <p className="mb-6">Oops, esta página no existe 😥</p>
     <Button title="Ir al home" href="/" canonical />
   </div>
 )

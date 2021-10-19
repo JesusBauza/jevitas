@@ -8,7 +8,6 @@ import { useGlobalDataContext } from '@/components/page'
 import { useRouter } from 'next/router'
 import Navigation from '@/lib/navigation'
 import { useCanonical } from '@/lib/utils/client'
-import { useBrandLayout } from '@/models/page/brand-layout/context'
 import { Spin as Hamburger } from 'hamburger-react'
 import LogoSVG from '@/public/images/logo.svg'
 
@@ -22,7 +21,6 @@ export default function Navbar({
   const globalData = useGlobalDataContext()
   const isCanonical = useCanonical()
 
-  const [brand] = useBrandLayout()
   const { query, pathname } = useRouter()
 
   const isActive = useCallback((path: string) => path === '/' ? path === pathname : pathname.startsWith(path), [pathname])
