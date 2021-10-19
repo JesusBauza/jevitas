@@ -37,13 +37,13 @@
 }
 
 .element.active {
-	color: white;
+	@apply text-fg-secondary;
 }
 
 .element::before {
 	content: "";
 	position: absolute;
-	background-color: white;
+	@apply bg-fg-secondary;
 	transition: all .3s ease-out 0s;
 	opacity: 0;
 	width: 0px;

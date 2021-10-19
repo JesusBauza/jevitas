@@ -6,6 +6,8 @@ import s from './styles/sidebar.module.css'
 import { useGlobalDataContext } from '@/components/page'
 import dynamic from 'next/dynamic'
 import { useDarkMode } from '@/lib/dark-mode'
+import Cloud from '@www/home/nube.svg'
+import Fig from '@www/home/hero-fig2.svg'
 
 const DarkModeSwitch = dynamic(import('react-toggle-dark-mode').then(m => m.DarkModeSwitch), {
   ssr: false
@@ -148,10 +150,14 @@ const Sidebar = ({ open = false, toggle }: SidebarProps) => {
   return (
     <sidebarContext.Provider value={sidebarState}>
       <aside
-        className={`${s.sidebar} ${open ? 'open' : ''}`}
+        className={`${s.sidebar} relative ${open ? 'open' : ''}`}
         ref={sidebarRef}
         style={{ opacity: `${open ? '1' : '0'}` }}
       >
+        <div className="absolute flex w-full h-full items-center overflow-hidden">
+          <Fig className="transform -translate-y-16 scale-x-[-1] scale-y-[-1] -translate-x-5" />
+        </div>
+        <Cloud className="absolute w-9/10 bottom-0 right-0 w-7/10 lg:w-3/10" />
         <Wrapper toggle={toggle}/>
       </aside>
     </sidebarContext.Provider>

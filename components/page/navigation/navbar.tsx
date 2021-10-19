@@ -1,16 +1,15 @@
-import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
+import { Fragment, useCallback, useState } from 'react'
 import Link from '@/components/canonical-link'
 import Sidebar from './sidebar'
 import Dropdown from './dropdown'
 import s from './styles/navbar.module.css'
 import nav from '@/lib/navigation'
 import { useGlobalDataContext } from '@/components/page'
-import { Button } from '@/components/button'
 import { useRouter } from 'next/router'
 import Navigation from '@/lib/navigation'
 import { useCanonical } from '@/lib/utils/client'
 import { useBrandLayout } from '@/models/page/brand-layout/context'
-import { Squeeze as Hamburger } from 'hamburger-react'
+import { Spin as Hamburger } from 'hamburger-react'
 import LogoSVG from '@/public/images/logo.svg'
 
 export default function Navbar({
@@ -41,7 +40,7 @@ export default function Navbar({
             </h1>
           </div>
           <div className={s.elements}>
-            <div className="mr-4 text-sm items-center hidden lg:flex h-full">
+            <div className="text-sm items-center hidden lg:flex h-full">
               {nav(globalData).map((n, i) => n.childrens ? (
                 <Fragment key={i}>
                   <Dropdown titulo={n.titulo} links={n.childrens} />
@@ -60,15 +59,14 @@ export default function Navbar({
                 </Link>
               ))}
             </div>
-            <Button title="Conócenos" href="/contacto" className="text-sm z-10 lg:mr-4" type="secondary" />
             {Navigation(globalData).length ? (
-              <div className="ml-2 lg:hidden">
+              <div className="ml-2 lg:hidden text-fg-primary">
                 <style jsx global>{`
                 .hamburger-react * {
                   transition-property: transform !important; 
                 }
                 `}</style>
-                <Hamburger toggled={sidebar} toggle={toggleSidebar} size={24} rounded hideOutline />
+                <Hamburger direction="left" toggled={sidebar} toggle={toggleSidebar} size={24} rounded hideOutline />
               </div>
             ) : null}
           </div>
