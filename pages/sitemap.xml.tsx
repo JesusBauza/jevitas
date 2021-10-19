@@ -1,5 +1,4 @@
 import { getAbsoluteURL } from '@/lib/utils/client'
-import { hybridRoute } from '@/lib/utils/server'
 import { GetServerSideProps } from 'next'
 import { SitemapStream, streamToPromise } from 'sitemap'
 
@@ -25,7 +24,7 @@ const buildSitemap: BuildSitemap = (items, host: string) => {
   return streamToPromise(sitemap)
 }
 
-export const getServerSideProps: GetServerSideProps = hybridRoute(async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   if (res) {
     const sitemap = await buildSitemap({}, req.headers.host)
 
@@ -37,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = hybridRoute(async ({ req, 
   return {
     props: {},
   }
-})
+}
 
 const SitemapPage = () => null
 

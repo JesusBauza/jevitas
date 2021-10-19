@@ -11,9 +11,9 @@ const PageOffline: PageWithLayout = () => {
   return (
     <div className="text-center w-full py-16">
       <h1 className="font-title text-fg-primary mb-8 text-5xl">
-        You're offline
+        Offline
       </h1>
-      <p className="mb-6">Sorry, you doesn't have internet access</p>
+      <p className="mb-6">Oops, parece que no tienes conectividad a internet</p>
       <Button icon={<Repeat24 />} title="Refresh" onClick={reload} />
     </div>
   )
