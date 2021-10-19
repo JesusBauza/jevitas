@@ -3,12 +3,7 @@ import Link from '@/components/canonical-link'
 import { UrlObject } from 'url'
 import Loader from 'react-loader-spinner'
 import { useTheme } from './page'
-
-enum typeColor {
-  primary = 'bg-[#556876] text-[white]',
-  secondary = 'bg-white text-[#3763eb] hover:bg-[#3763eb] hover:text-white',
-  vintage = 'text-white bg-[#F0BE69]',
-}
+import styles from './button.module.css'
 
 enum loadingColor {
   primary = 'border-fg-primary bg-fg-primary text-bg-primary',
@@ -16,7 +11,7 @@ enum loadingColor {
 
 declare type Url = string | UrlObject
 
-export type ButtonType = keyof typeof typeColor
+export type ButtonType = 'primary' | 'secondary' | 'vintage'
 
 export type ButtonProps = {
   loading?: boolean
@@ -48,7 +43,7 @@ export const Button = (props: ButtonProps) => {
     children,
     style,
   } = props
-  const classes = `${rounded ? 'rounded-full' : ''} font-bold text-xs lg:text-base transform hover:translate-y-[-4px] hover:scale-[1.05] disabled:opacity-50 py-3 lg:py-3 hover:shadow-lg px-6 lg:px-8 items-center inline-flex ${loading ? loadingColor[type] : 'bg-transparent ' + typeColor[type]} ${props.className ? props.className : ''}`
+  const classes = `${rounded ? 'rounded-full' : ''} font-bold text-xs lg:text-base transform hover:translate-y-[-4px] hover:scale-[1.05] disabled:opacity-50 py-3 lg:py-3 hover:shadow-lg px-6 lg:px-8 items-center inline-flex ${loading ? loadingColor[type] : styles[type]} ${props.className ? props.className : ''}`
 
   const theme = useTheme()
 

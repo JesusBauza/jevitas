@@ -36,7 +36,7 @@ export default function Navbar({
           <div className="flex pointer-events-auto items-center">
             <h1 className="font-bold font-title text-xl text-fg-primary transform transition-transform duration-200 select-none sm:text-4xl hover:scale-95">
               <Link title="Jevitas Intensas" href="/">
-                <LogoSVG style={{ width: 130 }} />
+                <LogoSVG className="w-[100px] sm:w-[130px]" />
               </Link>
             </h1>
           </div>

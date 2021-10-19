@@ -1,0 +1,19 @@
+.primary {
+  background-color: #556876;
+  color: white;
+}
+
+.secondary {
+  background-color: white;
+  color: #3763eb;
+}
+
+.secondary:hover {
+  background-color: #3763eb;
+  color: white;
+}
+
+.vintage {
+  background-color: #f0be69;
+  color: white;
+}
