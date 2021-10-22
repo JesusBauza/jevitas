@@ -1,11 +1,14 @@
+import Parallax from '@/components/parallax'
 import Viewport, { setAnim } from '@/components/viewport'
 import Bg from '@/public/images/banner.png'
 import Image from 'next/image'
 
 const Banner = () => {
   return (
-    <div className="bg-[#f0be69] py-24 relative">
-      <Image className="absolute w-full h-full object-cover select-none pointer-events-none" layout="fill" src={Bg} quality={100} />
+    <div className="bg-[#f0be69] py-24 relative overflow-hidden">
+      <Parallax className="absolute w-full h-full -mt-8" scaleFactor={8}>
+        <Image title="" className="w-full h-full object-cover select-none pointer-events-none" layout="fill" src={Bg} quality={100} />
+      </Parallax>
       <Viewport
         className="animate text-center c-lg flex justify-center items-center"
         style={{ perspective: 1000, ...setAnim({ y: '0.5rem' }) }}

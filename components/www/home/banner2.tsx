@@ -1,9 +1,8 @@
 import { Button } from '@/components/button'
 import Viewport, { setAnim } from '@/components/viewport'
-import Img from './banner2.svg'
-import Fig1 from './banner2-fig1.svg'
-import Fig2 from './banner2-fig2.svg'
-import Image from 'next/image'
+import Img from './svg/banner2.svg'
+import Fig1 from './svg/banner2-fig1.svg'
+import Fig2 from './svg/banner2-fig2.svg'
 
 const Banner2 = () => {
   return (

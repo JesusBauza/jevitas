@@ -33,7 +33,6 @@ export const Button = (props: ButtonProps) => {
   const {
     loading,
     disabled,
-    canonical,
     rounded = true,
     title,
     type = 'primary',
@@ -64,7 +63,7 @@ export const Button = (props: ButtonProps) => {
   )
 
   return href ? (
-    <Link className={classes} href={href} canonical={canonical} style={{
+    <Link className={classes} href={href} style={{
       ...(style || {}),
       pointerEvents: loading || disabled ? 'none' : 'unset',
       willChange: 'transform',

@@ -2,13 +2,13 @@ import { Button } from '@/components/button'
 import Viewport, { setAnim } from '@/components/viewport'
 import { use100vh } from 'react-div-100vh'
 import Annella from '@/public/images/welcome.png'
-import Flower from './flor.svg'
-import Fig1 from './hero-fig1.svg'
-import Fig2 from './hero-fig2.svg'
-import Cloud from './nube.svg'
+import Flower from './svg/flor.svg'
+import Fig1 from './svg/hero-fig1.svg'
+import Fig2 from './svg/hero-fig2.svg'
+import Cloud from './svg/nube.svg'
+import Gotas from './svg/gotas.svg'
+import Eye from './svg/ojo.svg'
 import Image from 'next/image'
-import Gotas from './gotas.svg'
-import Eye from './ojo.svg'
 
 const Hero = () => {
   const sH = use100vh()
@@ -40,7 +40,7 @@ const Hero = () => {
               espacios con sus ideas.
             </p>
             <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-              <Button title="Conócenos" href="contacto" />
+              <Button title="Conócenos" href="/contacto" />
             </div>
           </div>
         </Viewport>

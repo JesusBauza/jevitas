@@ -1,19 +1,37 @@
-import { useBrandLayout } from '@/models/page/brand-layout/context'
-import styles from './footer.module.css'
+import CanonicalLink from '@/components/canonical-link'
+import LogoSVG from '@/public/images/logo.svg'
 
-const MadeBy = () => {
-  const [layout] = useBrandLayout()
-  const year = new Date().getFullYear()
-  return (
-    <div className={styles['madeBy']}>
-      <p>© {year} · <span className="font-bold font-title text-fg-primary">{layout.titleName}</span></p>
-    </div>
-  )
-}
+const links = [
+  {
+    titulo: 'Formaciones',
+    href: '/',
+  },
+  {
+    titulo: 'Nuestra tiendita',
+    href: '/tiendita',
+  },
+  {
+    titulo: 'Laboratorio de ideas',
+    href: '/',
+  },
+  {
+    titulo: 'De intensidades y dudas',
+    href: '/',
+  },
+]
 
 const Footer = () => (
-  <footer className="p pb-6 c-lg t-16 lg:pb-12">
-    <MadeBy />
+  <footer className="w-full bg-[#FDD2A7] py-24">
+    <div className="c-lg flex flex-col lg:flex-row items-center">
+      <div className="w-full justify-center flex lg:justify-start">
+        <LogoSVG className="w-1/2" />
+      </div>
+      <div className="w-full justify-center flex flex-col space-y-4 mt-16 lg:mt-0">
+        {links.map((l, idx) => (
+          <CanonicalLink href={l.href} key={idx} className="uppercase hover:underline text-sm text-fg-primary">{l.titulo}</CanonicalLink>
+        ))}
+      </div>
+    </div>
   </footer>
 )
 

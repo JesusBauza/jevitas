@@ -1,14 +1,14 @@
-import { HTMLAttributes, RefObject, useEffect, useRef, useState } from 'react'
+import { HTMLAttributes, RefObject, useCallback, useEffect, useRef, useState } from 'react'
 
 export interface ParallaxProps
-extends HTMLAttributes<HTMLDivElement> {
+  extends HTMLAttributes<HTMLDivElement> {
   scaleFactor?: number
   horizontal?: boolean
   negative?: boolean
 }
 
 export interface ParallaxObjectProps
-extends ParallaxProps {
+  extends ParallaxProps {
   offset: number
 }
 
@@ -23,16 +23,17 @@ export default function ParallaxObject({
   const [translate, setTranslate] = useState<number>(null)
   const ref: RefObject<HTMLDivElement> = useRef(null)
 
-  const scrollHander = () => {
+  const scrollHander = useCallback(() => {
     setScrollY(window.scrollY)
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', scrollHander, { passive: true })
+    scrollHander()
     return () => (window.removeEventListener('scroll', scrollHander))
-  })
+  }, [])
 
-  const render = () => {
+  useEffect(() => {
     if (scrollY !== null && !ref.current) return;
 
     if (offset) {
@@ -45,16 +46,13 @@ export default function ParallaxObject({
     const ensure = translate ? translate : 0
     const finalFixed = negative ? ensure - (ensure * 2) : ensure
     const css = {
-      x:  !horizontal ? '0px' : finalFixed.toFixed(2) + 'px',
-      y:  horizontal ? '0px' : finalFixed.toFixed(2) + 'px',
+      x: !horizontal ? '0px' : finalFixed.toFixed(2) + 'px',
+      y: horizontal ? '0px' : finalFixed.toFixed(2) + 'px',
     }
     Object.entries(css).forEach(([key, value]) => {
       ref.current.style.setProperty(`--${key}`, value)
     })
-  }
-
-  useEffect(scrollHander)
-  useEffect(render)
+  }, [scrollY, offset, horizontal, translate, scaleFactor])
 
   return (
     <div

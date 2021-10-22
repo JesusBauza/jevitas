@@ -3,14 +3,14 @@ import Viewport, { setAnim } from '@/components/viewport'
 import { use100vh } from 'react-div-100vh'
 import Annella from '@/public/images/annella.png'
 import Image from 'next/image'
-import Hearts from './hearts.svg'
+import Hearts from './svg/hearts.svg'
 
 const Welcome = () => {
   const sH = use100vh()
   return (
     <>
       <div className="bg-[#f8f3ef] w-full relative">
-        <Hearts className="absolute top-[2%] left-[-1%]" />
+        <Hearts className="absolute top-[2%] hidden sm:block origin-top-left transform scale-75"  />
         <Viewport
           className="flex flex-col py-8 c-lg items-center lg:flex-row lg:space-x-16 lg:py-0 xl:min-h-[var(--min-h)]"
           style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 97px)`, perspective: 1000 }}

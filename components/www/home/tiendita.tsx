@@ -26,9 +26,9 @@ const Tiendita = () => {
               despertar el espíritu creativo de mujeres.
             </p>
           </div>
-          <Viewport className="grid lg:grid-cols-3 w-full gap-24" style={setAnim({ y: '0.5rem' })}>
+          <Viewport className="grid lg:grid-cols-3 w-full gap-16 sm:gap-32" style={setAnim({ y: '0.5rem' })}>
             {Array.from({ length: 3 }, () => sample).map((p, idx) => (
-              <div className="flex flex-col space-y-4 animate" style={setAnim({ d: `${400 + (100 * idx)}ms` })}>
+              <div className="flex flex-col space-y-4 animate" style={setAnim({ d: `${400 + (100 * idx)}ms` })} key={idx}>
                 <div className="rounded-2xl overflow-hidden">
                   <Image
                     src={p.image}
@@ -48,8 +48,8 @@ const Tiendita = () => {
                   />
                 </div>
                 <div className="flex w-full justify-between">
-                  <h4 className="font-title text-xl">{p.title}</h4>
-                  <p className="text-xl">${p.price.toFixed(2)}</p>
+                  <h4 className="font-title text-2xl">{p.title}</h4>
+                  <p className="text-2xl">${p.price.toFixed(2)}</p>
                 </div>
               </div>
             ))}
