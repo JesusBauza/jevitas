@@ -6,7 +6,7 @@ import Contenido from './svg/contenido.svg'
 import Fotografiamos from './svg/fotografiamos.svg'
 import Consultorias from './svg/consultoria.svg'
 import Web from './svg/web.svg'
-import Banner from './svg/Banner.svg'
+import Banner from './svg/banner.svg'
 import s from './content.module.css'
 import Viewport, { setAnim } from '@/components/viewport'
 
