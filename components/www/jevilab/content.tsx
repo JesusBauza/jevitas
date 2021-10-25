@@ -39,7 +39,7 @@ const content = () => [
   {
     image: <Web className="w-full h-auto" />,
     title: 'Desarrollamos páginas web',
-    text: 'Convertimos tus ideas en piezas graficas bla bla bla',
+    text: 'Tu marca necesita su propio espacio en internet, nosotros lo diseñamos estratégicamente para ti.',
   },
 ]
 

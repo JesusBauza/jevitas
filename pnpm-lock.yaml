@@ -59,6 +59,7 @@ importers:
       react-dom: 17.0.1
       react-intersection-observer: ^8.32.0
       react-loader-spinner: ^4.0.0
+      react-lottie: ^1.2.3
       react-table: ^7.7.0
       react-toggle-dark-mode: ^1.0.4
       request: ^2.88.2
@@ -109,6 +110,7 @@ importers:
       react-dom: 17.0.1_react@17.0.1
       react-intersection-observer: 8.32.0_react@17.0.1
       react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
+      react-lottie: 1.2.3_react@17.0.1
       react-table: 7.7.0_react@17.0.1
       react-toggle-dark-mode: 1.0.4_205acd952c50f2c6d245408e65bdf014
       request: 2.88.2
@@ -3646,6 +3648,13 @@ packages:
 
   /babel-plugin-syntax-jsx/6.18.0:
     resolution: {integrity: sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=}
+    dev: false
+
+  /babel-runtime/6.26.0:
+    resolution: {integrity: sha1-llxwWGaOgrVde/4E/yM3vItWR/4=}
+    dependencies:
+      core-js: 2.6.12
+      regenerator-runtime: 0.11.1
     dev: false
 
   /bach/1.2.0:
@@ -8382,6 +8391,10 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lottie-web/5.7.14:
+    resolution: {integrity: sha512-J+QEPse7Rws0XvTqRJNtcE8cszb5FWYFHubEK6bgDJtw64/AQJ40aazbWXsWGBM4sm/PgLBLgmmhDU4QpLiieg==}
+    dev: false
+
   /lowercase-keys/1.0.1:
     resolution: {integrity: sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==}
     engines: {node: '>=0.10.0'}
@@ -10481,6 +10494,17 @@ packages:
       react-dom: 17.0.1_react@17.0.1
     dev: false
 
+  /react-lottie/1.2.3_react@17.0.1:
+    resolution: {integrity: sha512-qLCERxUr8M+4mm1LU0Ruxw5Y5Fn/OmYkGfnA+JDM/dZb3oKwVAJCjwnjkj9TMHtzR2U6sMEUD3ZZ1RaHagM7kA==}
+    engines: {npm: ^3.0.0}
+    peerDependencies:
+      react: ^0.14.7 || ^15.0.0 || ^16.0.0
+    dependencies:
+      babel-runtime: 6.26.0
+      lottie-web: 5.7.14
+      react: 17.0.1
+    dev: false
+
   /react-merge-refs/1.1.0:
     resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
     dev: false
@@ -10763,6 +10787,10 @@ packages:
 
   /regenerate/1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
+
+  /regenerator-runtime/0.11.1:
+    resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
+    dev: false
 
   /regenerator-runtime/0.13.7:
     resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}

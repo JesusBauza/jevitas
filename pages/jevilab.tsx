@@ -2,7 +2,7 @@ import { PageWithLayout } from '@/components/page'
 import Content from '@www/jevilab/content'
 import Hero from '@www/jevilab/hero'
 
-const Index: PageWithLayout = () => {
+const JeviLab: PageWithLayout = () => {
   return (
     <div className="bg-white overflow-hidden">
       <Hero />
@@ -11,8 +11,8 @@ const Index: PageWithLayout = () => {
   )
 }
 
-Index.getLayoutProps = (() => ({
+JeviLab.getLayoutProps = (() => ({
   title: 'JeviLab',
 }))
 
-export default Index
+export default JeviLab

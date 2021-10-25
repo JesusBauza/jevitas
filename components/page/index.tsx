@@ -101,6 +101,9 @@ export const PageColors = ({ brandLayout, children }: { brandLayout?: IBrandLayo
         }}
       />
       <style jsx>{`
+      :global(html) {
+        background: ${theme.background.primary} !important;
+      }
       :global(::-webkit-scrollbar) {
         width: 14px !important;
       }
