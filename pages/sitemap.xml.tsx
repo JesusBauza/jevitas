@@ -4,7 +4,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 
 type BuildSitemap = (items: any, host: string) => Promise<any>
 
-const pages = ['', '/jevilab', '/nosotras', '/blog']
+const pages = ['', '/jevilab', '/nosotras', '/blog', '/tiendita']
 
 const buildSitemap: BuildSitemap = (items, host: string) => {
   const sitemap = new SitemapStream({
