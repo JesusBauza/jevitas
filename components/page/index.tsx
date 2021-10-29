@@ -7,11 +7,11 @@ import Favicons from './favicons'
 import { NextPage } from 'next/types'
 import { useRouter } from 'next/router'
 import { IBrandLayout, getDefaultBrandLayout } from '@/models/page/brand-layout'
-import Loader from 'react-loader-spinner'
 import NextNprogress from 'nextjs-progressbar'
 import { BrandLayoutProvider, useBrandLayout } from '@/models/page/brand-layout/context'
 import { hexToRgb } from '@/models/common/color'
 import { DarkModeProvider, useDarkMode } from '@/lib/dark-mode'
+import { getAbsoluteURL } from '@/lib/utils/client'
 
 export type GetLayoutProps<T = PageProps> = (props: T) => PageProps
 
@@ -187,6 +187,9 @@ const Page = (pageProps: PageProps) => {
     children,
     globalData,
     canonical,
+    image = getAbsoluteURL({
+      path: `/api/caravaggio/o:png/q:100/progressive:true/rs,s:1200x630,m:fill,g:auto?image=${encodeURIComponent('/images/welcome.png')}`,
+    }),
     ...rest
   } = pageProps
 
@@ -196,7 +199,7 @@ const Page = (pageProps: PageProps) => {
     <globalDataContext.Provider value={globalData}>
       <DarkModeProvider>
         <BrandLayoutProvider defaultLayout={pageLayout}>
-          <OgImage {...rest} />
+          <OgImage {...rest} image={image} />
 
           <style global jsx>{`
           html {

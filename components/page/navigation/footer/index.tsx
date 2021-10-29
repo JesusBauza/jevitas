@@ -4,7 +4,7 @@ import LogoSVG from '@/public/images/logo.svg'
 const links = [
   {
     titulo: 'Formaciones',
-    href: '/',
+    href: '/programas',
   },
   {
     titulo: 'Nuestra tiendita',
@@ -12,11 +12,11 @@ const links = [
   },
   {
     titulo: 'Laboratorio de ideas',
-    href: '/',
+    href: '/jevilab',
   },
   {
     titulo: 'De intensidades y dudas',
-    href: '/',
+    href: 'https://anchor.fm/jevitasintensas',
   },
 ]
 
