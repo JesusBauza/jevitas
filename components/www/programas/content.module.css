@@ -1,0 +1,8 @@
+@screen lg {
+  .reverse {
+    direction: rtl;
+  }
+  .reverse > * {
+    direction: ltr;
+  }
+}

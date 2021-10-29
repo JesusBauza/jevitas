@@ -26,7 +26,7 @@ const Acompa = () => <div className="space-y-8 lg:space-y-0 bg-white py-16 lg:py
         y arte. Un espacio para brindar sesiones personalizadas, <br className="hidden lg:block" />
         programas y recursos de nuestra comunidad de expertas.
       </p>
-      <CanonicalLink className="uppercase hover:underline text-fg-secondary items-center" style={{ display: 'inline-flex' }} href="#">Conoce más <span className="pl-2"><Arrow /></span> </CanonicalLink>
+      <CanonicalLink className="uppercase hover:underline text-fg-secondary items-center" style={{ display: 'inline-flex' }} href="/programas">Conoce más <span className="pl-2"><Arrow /></span> </CanonicalLink>
     </div>
   </div>
 
@@ -45,7 +45,7 @@ const Acompa = () => <div className="space-y-8 lg:space-y-0 bg-white py-16 lg:py
         servicios en el área de marketing, diseño, comunicaciones y <br className="hidden lg:block" />
         relaciones públicas.
       </p>
-      <CanonicalLink className="uppercase hover:underline text-fg-secondary items-center" style={{ display: 'inline-flex' }} href="#">Conoce más <span className="pl-2"><Arrow /></span> </CanonicalLink>
+      <CanonicalLink className="uppercase hover:underline text-fg-secondary items-center" style={{ display: 'inline-flex' }} href="/jevilab">Conoce más <span className="pl-2"><Arrow /></span> </CanonicalLink>
     </div>
   </div>
 </div>

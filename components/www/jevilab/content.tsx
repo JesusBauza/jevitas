@@ -73,6 +73,18 @@ const Content = () => (
         </h3>
       </Viewport>
     </div>
+    <div className="c-lg py-24 relative">
+      <Viewport
+        className="flex flex-col space-y-8 items-center text-center bg-[#F8F3EF] px-12 pb-12 lg:px-16 lg:pb-16 rounded-[40px] animate"
+        style={{ perspective: 1000, ...setAnim({ y: '2rem', rx: '32deg' }) }}
+      >
+        <Banner className="-mt-4 animate" style={setAnim({ d: '200ms' })} />
+        <h3 className="text-2xl lg:text-5xl font-title text-[#4E4C4D] animate" style={setAnim({ d: '400ms' })}>
+          Nos encargamos de eso para <br className="hidden lg:block" />
+          lo que no tienes tiempo
+        </h3>
+      </Viewport>
+    </div>
   </div >
 )
 export default Content

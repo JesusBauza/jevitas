@@ -28,7 +28,7 @@ const Hero = () => {
           style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 84px)` }}
         >
           <div className="flex w-full pb-8 pt-16 animate lg:py-0 lg:w-1/2 justify-center relative" style={setAnim({ d: '400ms', y: '-0.5rem', x: '-0.5rem' })}>
-            <Image src={Annella} placeholder="blur" />
+            <Image src={Annella} placeholder="blur" quality={100} />
           </div>
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
             <h1 className="animate text-5xl xl:text-7xl font-title text-fg-primary">
