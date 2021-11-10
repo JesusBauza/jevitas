@@ -17,6 +17,10 @@
 	}
 }
 
+.noScrollBar::-webkit-scrollbar {
+	display: none;
+}
+
 .input {
 	@apply p-2;
 	@apply border-b;

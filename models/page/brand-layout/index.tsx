@@ -43,12 +43,12 @@ export const getDefaultBrandLayout = (): IBrandLayout => {
       },
       dark: {
         foreground: {
-          primary: '#f87171',
-          secondary: '#f5f4f4'
+          primary: '#dd8525',
+          secondary: '#e8521f',
         },
         background: {
-          primary: '#2f2f2f',
-          secondary: '#383838',
+          primary: '#fff0e3',
+          secondary: '#f8f3ef',
         }
       }
     }

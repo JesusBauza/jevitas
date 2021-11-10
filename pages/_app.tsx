@@ -7,6 +7,7 @@ import Page, { PageProps, PageWithLayout } from '@/components/page'
 import { useMemo } from 'react'
 import { SWRConfig } from 'swr'
 import { serviceFetcher } from '@/lib/fetcher'
+import Script from 'next/script'
 
 type Props = AppProps & {
   Component: PageWithLayout

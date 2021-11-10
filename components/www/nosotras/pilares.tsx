@@ -44,7 +44,7 @@ const Pilares = () => {
           </h3>
           <Viewport className="grid grid-cols-1 lg:grid-cols-3 w-full gap-32 pb-12">
             {content().map((c, idx) => (
-              <div className="w-full flex flex-col animate" style={setAnim({ d: ((idx + 1) * 200) + 'ms', y: '0.5rem' })}>
+              <div className="w-full flex flex-col animate" style={setAnim({ d: ((idx + 1) * 200) + 'ms', y: '0.5rem' })} key={idx}>
                 {c.image}
                 <h4 className="font-black text-2xl text-center mt-8 mb-2 text-[#E8521F]">
                   {c.title}

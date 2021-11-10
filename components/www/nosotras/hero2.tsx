@@ -14,7 +14,7 @@ const Hero2 = () => {
         style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 84px)` }}
       >
         <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
-          <h1 className="animate text-2xl lg:text-4xl font-title">
+          <h1 className="animate text-2xl lg:text-2xl xl:text-4xl font-title">
             En Jevitas Intensas somos una <br className="hidden lg:block" />
             comunidad que acompaña a mujeres <br className="hidden lg:block" />
             hispanas a descubrir su propósito de <br className="hidden lg:block" />
