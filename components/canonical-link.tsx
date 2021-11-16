@@ -10,9 +10,9 @@ export type CanonicalLinkProps = LinkProps & {
   canonical?: boolean
 }
 
-const CanonicalLink = ({ canonical, href, children, ...props }: PropsWithChildren<CanonicalLinkProps>) => {
+const CanonicalLink = ({ canonical, href, children, shallow, ...props }: PropsWithChildren<CanonicalLinkProps>) => {
   return (
-    <Link {...props} href={href}>
+    <Link {...props} href={href} shallow={shallow}>
       <a {...props}>
         {children}
       </a>
