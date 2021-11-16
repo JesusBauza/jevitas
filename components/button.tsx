@@ -16,6 +16,7 @@ export type ButtonType = 'primary' | 'secondary' | 'vintage' | 'pink'
 export type ButtonProps = {
   loading?: boolean
   disabled?: boolean
+  shallow?: boolean
   canonical?: boolean
   rounded?: boolean
   icon?: ReactNode
@@ -33,6 +34,7 @@ export const Button = (props: ButtonProps) => {
   const {
     loading,
     disabled,
+    shallow,
     rounded = true,
     title,
     type = 'primary',
@@ -63,7 +65,7 @@ export const Button = (props: ButtonProps) => {
   )
 
   return href ? (
-    <Link className={classes} href={href} style={{
+    <Link className={classes} href={href} shallow={shallow} style={{
       ...(style || {}),
       pointerEvents: loading || disabled ? 'none' : 'unset',
       willChange: 'transform',
