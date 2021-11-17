@@ -98,7 +98,7 @@ const BlogIndex: PageWithLayout<{ posts: Post[] }> = (fallbackData) => {
       return posts;
     if (router.query.category === 'offtopic')
       return posts.filter(p => !p.categories.length);
-    return posts.filter(p => p.categories.some(pp => pp.slug == p.slug))
+    return posts.filter(p => p.categories.some(pp => pp.slug == router.query.category))
   }, [router.query])
   return (
     <div className="bg-white overflow-hidden">
