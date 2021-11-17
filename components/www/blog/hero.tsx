@@ -1,12 +1,11 @@
 import Shapes from './svg/shape.svg'
 import Rainbow from './svg/rainbow.svg'
-import Annella from '@/public/images/welcome.png'
 import { Button } from '@/components/button'
 import { useRouter } from 'next/router'
 import { useRefWithCallback } from '@/lib/hooks'
 import { useCallback, useRef } from 'react'
 import { useDatoCMSApi } from '@/lib/fetcher'
-import { responsiveImageFragment, responsiveImageHelper } from '@/lib/datocms'
+import { responsiveImageHelper } from '@/lib/datocms'
 import { Image } from 'react-datocms'
 
 const CATEGORIES = `{

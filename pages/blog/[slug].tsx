@@ -7,7 +7,6 @@ import { GetStaticPathsResult, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo, useRef } from 'react'
 import { Image, StructuredText } from 'react-datocms'
-import useSWR from 'swr'
 
 type Post = {
   slug: string
@@ -62,7 +61,8 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   return {
     props: {
       post,
-    }
+    },
+    revalidate: 1,
   }
 }
 
@@ -80,7 +80,7 @@ export const getStaticPaths = async (): Promise<GetStaticPathsResult> => {
     paths: allPosts.map(({ slug }) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -106,7 +106,7 @@ export const Slug = (postFallback: { post: Post }) => {
     node.style.justifyContent = node.scrollWidth > node.clientWidth ? 'left' : 'center'
   }, [])
   return data ? (
-    <>
+    <div className="bg-white">
       <div className="flex items-center flex-col h-[70vh] bg-[#F0BE69] justify-center relative">
         <div className="absolute w-full h-full overflow-hidden">
           <Image
@@ -118,10 +118,12 @@ export const Slug = (postFallback: { post: Post }) => {
         </div>
         <div className="absolute w-full h-full" style={{ background: 'rgba(240, 190, 105, 0.8)' }} />
         <div className="flex flex-col space-y-4 sm:space-y-10 relative text-center items-center">
-          <p className="text-[#4E4C4D] font-bold sm:font-normal sm:font-title sm:text-xl text-center">
-            Nuestro blog
-          </p>
-          <h2 className="font-title text-5xl lg:text-7xl text-white relative">{data.post.title}</h2>
+          <div className="flex flex-col">
+            <p className="text-[#4E4C4D] font-bold sm:font-normal sm:font-title sm:text-xl text-center">
+              Nuestro blog
+            </p>
+            <h2 className="font-title text-5xl lg:text-7xl text-white relative">{data.post.title}</h2>
+          </div>
           <p className="font-bold font-bold text-xs sm:text-sm text-center lg:w-5/10 px-4">
             {data.post.description}
           </p>
@@ -163,7 +165,7 @@ export const Slug = (postFallback: { post: Post }) => {
           }}
         />
       </Viewport>
-    </>
+    </div>
   ) : null
 }
 
