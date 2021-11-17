@@ -42,8 +42,7 @@ query {
 `
 
 export const getStaticProps: GetStaticProps = async (context: any) => {
-  const { slug } = context.params
-  const { posts } = await datoCMSFetcher<{ posts: Post[] }>(query, { slug })
+  const { posts } = await datoCMSFetcher<{ posts: Post[] }>(query)
   return {
     props: {
       posts,
