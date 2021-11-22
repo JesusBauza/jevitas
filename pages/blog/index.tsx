@@ -10,7 +10,7 @@ import HeartR from '@www/blog/svg/card-heart-r.svg'
 import { responsiveImageHelper } from '@/lib/datocms'
 import { datoCMSFetcher, useDatoCMSApi } from '@/lib/fetcher'
 import { Image } from 'react-datocms'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { GetStaticProps } from 'next'
 
@@ -22,6 +22,12 @@ type Post = {
   cover: {
     responsiveImage: any
   }
+}
+
+type Category = {
+  slug: string
+  name: string
+  cover: any
 }
 
 const query = `
@@ -38,18 +44,25 @@ query {
     slug
     title
   }
+  categories: allBlogCategories {
+    name
+    slug
+    cover {
+      ${responsiveImageHelper()}
+    }
+  }
 }
 `
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const { posts } = await datoCMSFetcher<{ posts: Post[] }>(query)
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 1,
-  }
-}
+// export const getStaticProps: GetStaticProps = async (context: any) => {
+//   const { posts } = await datoCMSFetcher<{ posts: Post[] }>(query)
+//   return {
+//     props: {
+//       posts,
+//     },
+//     revalidate: 1,
+//   }
+// }
 
 const Card = ({ idx, post }: { idx: number, post: Post }) => (
   <CanonicalLink href={`/blog/${post.slug}`} className="flex flex-col w-full space-y-4 hover:scale-105 transform duration-500">
@@ -86,26 +99,34 @@ const Card = ({ idx, post }: { idx: number, post: Post }) => (
   </CanonicalLink>
 )
 
-const BlogIndex: PageWithLayout<{ posts: Post[] }> = (fallbackData) => {
-  const { data } = useDatoCMSApi<{ posts: Post[] }>(query, {
+type BlogData = {
+  posts: Post[]
+  categories: Category[]
+}
+
+const BlogIndex: PageWithLayout<BlogData> = (fallbackData = { posts: [], categories: [] }) => {
+  const { data } = useDatoCMSApi<BlogData>(query, {
     swrConfig: {
-      fallbackData
+      fallbackData,
     }
   })
   const router = useRouter()
-  const filterPosts = useCallback((posts: Post[]) => {
-    if (!router.query.category)
-      return posts;
-    if (router.query.category === 'offtopic')
-      return posts.filter(p => !p.categories.length);
+
+  const filteredPost = useMemo(() => {
+    if (data) return;
+
+    const posts = data.posts
+    if (!router.query.category) return posts;
+    if (router.query.category === 'offtopic') return posts
+      .filter(p => !p.categories.length);
     return posts.filter(p => p.categories.some(pp => pp.slug == p.slug))
-  }, [router.query])
+  }, [router.query, data])
   return (
     <div className="bg-white overflow-hidden">
-      <Hero />
+      <Hero categories={data.categories} />
       {data ? (
         <div className="c-lg grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24 lg:gap-32 py-32">
-          {filterPosts(data.posts).map((p, idx) => (
+          {filteredPost.map((p, idx) => (
             <Card idx={idx} post={p} key={idx} />
           ))}
         </div>

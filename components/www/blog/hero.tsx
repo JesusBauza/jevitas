@@ -25,16 +25,14 @@ type Category = {
   cover: any
 }
 
-const Hero = () => {
+const Hero = (fallbackData: { categories: Category[] }) => {
   const { query } = useRouter()
   const callbackRef = useRef<() => void>()
   const { category } = query
   const { data: { categories } } = useDatoCMSApi<{ categories: Category[] }>(CATEGORIES, {
     swrConfig: {
       onSuccess: (data) => console.log(data),
-      fallbackData: {
-        categories: null,
-      } 
+      fallbackData 
     }
   })
   const [_, setRef] = useRefWithCallback<HTMLDivElement>(node => {
