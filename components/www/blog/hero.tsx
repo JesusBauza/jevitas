@@ -3,7 +3,7 @@ import Rainbow from './svg/rainbow.svg'
 import { Button } from '@/components/button'
 import { useRouter } from 'next/router'
 import { useRefWithCallback } from '@/lib/hooks'
-import { useCallback, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import { useDatoCMSApi } from '@/lib/fetcher'
 import { responsiveImageHelper } from '@/lib/datocms'
 import { Image } from 'react-datocms'
@@ -45,12 +45,13 @@ const Hero = (fallbackData: { categories: Category[] }) => {
   const setJustify = useCallback((node?: HTMLDivElement) => {
     node.style.justifyContent = node.scrollWidth > node.clientWidth ? 'left' : 'center'
   }, [])
+  const categoryData = useMemo(() => categories?.find(c => c.slug === category as string), [categories, category])
   return (
     <div className="flex items-center flex-col h-[70vh] bg-[#F0BE69] justify-center relative">
-      {categories && category && category != 'offtopic' ? (
+      {categories && category && category != 'offtopic' && categoryData?.cover ? (
         <div className="absolute w-full h-full overflow-hidden">
           <Image
-            data={categories.find(c => c.slug === category as string).cover.responsiveImage}
+            data={categoryData.cover.responsiveImage}
             fadeInDuration={600}
             className="w-full h-full"
             pictureClassName="object-cover"
