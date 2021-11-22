@@ -1,4 +1,5 @@
 import { Button } from '@/components/button'
+import { PageWithLayout } from '@/components/page'
 import Viewport, { setAnim } from '@/components/viewport'
 import { responsiveImageHelper } from '@/lib/datocms'
 import { datoCMSFetcher, useDatoCMSApi } from '@/lib/fetcher'
@@ -84,7 +85,7 @@ export const getStaticPaths = async (): Promise<GetStaticPathsResult> => {
   }
 }
 
-export const Slug = (postFallback: { post: Post }) => {
+export const Slug: PageWithLayout<{ post: Post }> = (postFallback) => {
   const { query: urlQuery } = useRouter()
   const variables = useMemo(() => ({ slug: urlQuery.slug }), [urlQuery])
   const { data } = useDatoCMSApi<{ post: Post }>(query, {
@@ -168,5 +169,9 @@ export const Slug = (postFallback: { post: Post }) => {
     </div>
   ) : null
 }
+
+Slug.getLayoutProps = (({ post }) => ({
+  title: post.title,
+}))
 
 export default Slug
