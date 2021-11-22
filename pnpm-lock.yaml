@@ -8,6 +8,7 @@ importers:
       '@ecwid/nextjs-ecwid-plugin': ^0.1.1
       '@react-three/drei': ^7.4.0
       '@react-three/fiber': ^7.0.6
+      '@sendgrid/mail': ^7.6.0
       '@supabase/supabase-js': ^1.22.6
       '@svgr/webpack': ^5.5.0
       '@tailwindcss/typography': ^0.4.0
@@ -86,6 +87,7 @@ importers:
       '@ecwid/nextjs-ecwid-plugin': 0.1.1_da809bfeddfa5818c0e35a1a7546cb3f
       '@react-three/drei': 7.4.0_205acd952c50f2c6d245408e65bdf014
       '@react-three/fiber': 7.0.6_5df6fed6183548b81ef0226f24ab7b47
+      '@sendgrid/mail': 7.6.0
       '@supabase/supabase-js': 1.22.6
       '@types/node-fetch': 2.5.10
       caravaggio: 3.6.0
@@ -3634,6 +3636,33 @@ packages:
       rollup: 2.51.2
     dev: false
 
+  /@sendgrid/client/7.6.0:
+    resolution: {integrity: sha512-cpBVZKLlMTO+vpE18krTixubYmZa98oTbLkqBDuTiA3zRkW+urrxg7pDR24TkI35Mid0Zru8jDHwnOiqrXu0TA==}
+    engines: {node: 6.* || 8.* || >=10.*}
+    dependencies:
+      '@sendgrid/helpers': 7.6.0
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /@sendgrid/helpers/7.6.0:
+    resolution: {integrity: sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA==}
+    engines: {node: '>= 6.0.0'}
+    dependencies:
+      deepmerge: 4.2.2
+    dev: false
+
+  /@sendgrid/mail/7.6.0:
+    resolution: {integrity: sha512-0KdaSZzflJD/vUAZjB3ALBIuaVGoLq22hrb2fvQXZHRepU/yhRNlEOqrr05MfKBnKskzq1blnD1J0fHxiwaolw==}
+    engines: {node: 6.* || 8.* || >=10.*}
+    dependencies:
+      '@sendgrid/client': 7.6.0
+      '@sendgrid/helpers': 7.6.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@sindresorhus/is/0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
     engines: {node: '>=6'}
@@ -4765,6 +4794,14 @@ packages:
 
   /aws4/1.11.0:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.14.5
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /babel-loader/8.2.2:
     resolution: {integrity: sha512-JvTd0/D889PQBtUXJ2PXaKU/pjZDMtHA9V2ecm+eNRmmBCMR09a+fmpGTNwnJtFmFl5Ei7Vy47LjBb+L0wQ99g==}
@@ -7683,6 +7720,16 @@ packages:
 
   /fn.name/1.1.0:
     resolution: {integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==}
+    dev: false
+
+  /follow-redirects/1.14.5:
+    resolution: {integrity: sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /for-in/1.0.2:
