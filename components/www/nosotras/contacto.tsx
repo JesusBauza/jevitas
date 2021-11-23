@@ -59,7 +59,7 @@ const Contacto = () => (
       </div>
       <Full className="w-full sm:hidden" />
     </div>
-    <Wave color="#d98c24" className="bg-[#fdd2a7] transform rotate-180" />
+    {/* <Wave color="#d98c24" className="bg-[#fdd2a7] transform rotate-180" /> */}
   </>
 )
 

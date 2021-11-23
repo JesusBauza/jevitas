@@ -37,20 +37,20 @@ const links = [
 ]
 
 const Footer = () => (
-  <footer className="w-full bg-[#FDD2A7] py-24 flex flex-col space-y-16 lg: space-y-10">
+  <footer className="w-full bg-[#d98c24] py-24 flex flex-col space-y-16 lg: space-y-10">
     <div className="c-lg flex flex-col lg:flex-row items-center">
-      <div className="w-full items-center flex lg:items-start flex-col space-y-8">
+      <div className="w-full items-center flex lg:items-start flex-col space-y-8" style={{ ['--logo-fill' as string]: 'white' }}>
         <LogoSVG className="w-1/2" />
-        <p className="text-sm font-bold text-fg-primary hidden lg:block">Made By Marketing Shakers</p>
+        <p className="text-sm font-bold hidden lg:block">Made By Marketing Shakers</p>
       </div>
       <div className="w-full justify-center grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-4 gap-4 mt-16 lg:mt-0 font-bold">
         {links.map((l, idx) => (
-          <CanonicalLink href={l.href} key={idx} className="uppercase hover:underline text-sm text-fg-primary">{l.titulo}</CanonicalLink>
+          <CanonicalLink href={l.href} key={idx} className="uppercase hover:underline text-sm text-white">{l.titulo}</CanonicalLink>
         ))}
       </div>
     </div>
     <div className="c-lg lg:hidden">
-        <p className="text-sm font-bold">Made By Marketing Shakers</p>
+      <p className="text-sm font-bold">Made By Marketing Shakers</p>
     </div>
   </footer>
 )
