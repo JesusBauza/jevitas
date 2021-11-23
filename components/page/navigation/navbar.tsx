@@ -10,6 +10,10 @@ import Navigation from '@/lib/navigation'
 import { useCanonical } from '@/lib/utils/client'
 import { Spin as Hamburger } from 'hamburger-react'
 import LogoSVG from '@/public/images/logo.svg'
+import Anchor from '../svg/spotify.svg'
+import Ig from '../svg/ig.svg'
+import Cart from '../svg/cart.svg'
+import Mail from '../svg/mail.svg'
 
 export default function Navbar({
   canonical,
@@ -56,6 +60,22 @@ export default function Navbar({
                   {n.titulo}
                 </Link>
               ))}
+            </div>
+            <div className="space-x-4 items-center ml-4 hidden lg:flex">
+              <a href="https://anchor.fm/jevitasintensas" target="_blank">
+                <Anchor />
+              </a>
+              <a href="https://anchor.fm/jevitasintensas" target="_blank">
+                <Ig />
+              </a>
+              <a href="mailto:annella@jevitasintensas.com" target="_blank">
+                <Mail />
+              </a>
+              <Link
+                href="/tiendita"
+              >
+                <Cart />
+              </Link>
             </div>
             {Navigation(globalData).length ? (
               <div className="ml-2 lg:hidden text-fg-primary">

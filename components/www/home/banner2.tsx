@@ -25,7 +25,7 @@ const Banner2 = () => {
               recibe nuestras carticas mensuales
             </h1>
             <div className="animate" style={setAnim({ d: '100ms', y: '0.5rem' })}>
-              <Button href="/contacto" type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
+              <Button href="http://eepurl.com/dxQwXT" type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
             </div>
           </div>
           <div className="flex w-full pt-16 animate lg:py-0 lg:w-1/3 justify-center items-end" style={setAnim({ d: '400ms', y: '0.5rem' })}>
