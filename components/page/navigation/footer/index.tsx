@@ -41,7 +41,7 @@ const Footer = () => (
     <div className="c-lg flex flex-col lg:flex-row items-center">
       <div className="w-full items-center flex lg:items-start flex-col space-y-8" style={{ ['--logo-fill' as string]: 'white' }}>
         <LogoSVG className="w-1/2" />
-        <p className="text-sm font-bold hidden lg:block">Made By Marketing Shakers</p>
+        <p className="text-sm font-bold hidden lg:block">Made By <a href="" target="_blank" className="hover:underline">Marketing Shakers</a></p>
       </div>
       <div className="w-full justify-center grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-4 gap-4 mt-16 lg:mt-0 font-bold">
         {links.map((l, idx) => (
@@ -50,7 +50,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="c-lg lg:hidden">
-      <p className="text-sm font-bold">Made By Marketing Shakers</p>
+      <p className="text-sm font-bold">Made By <a href="https://www.instagram.com/marketingshakers" target="_blank" className="hover:underline">Marketing Shakers</a></p>
     </div>
   </footer>
 )

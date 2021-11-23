@@ -65,7 +65,7 @@ export default function Navbar({
               <a href="https://anchor.fm/jevitasintensas" target="_blank">
                 <Anchor />
               </a>
-              <a href="https://anchor.fm/jevitasintensas" target="_blank">
+              <a href="https://www.instagram.com/jevitasintensas/" target="_blank">
                 <Ig />
               </a>
               <a href="mailto:annella@jevitasintensas.com" target="_blank">
