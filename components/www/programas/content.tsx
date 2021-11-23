@@ -5,6 +5,7 @@ import Camp from './svg/camp.svg'
 import Sol from './svg/sol.svg'
 import s from './content.module.css'
 import Viewport, { setAnim } from '@/components/viewport'
+import { Button } from '@/components/button'
 
 const items = () => [
   {
@@ -44,6 +45,7 @@ const Content = () => (
           <div className="flex flex-col space-y-6 animate px-[1.5rem] lg:px-0" style={setAnim({ d: '400ms' })}>
             <h3 className="font-title text-fg-primary text-3xl lg:text-5xl">{i.title}</h3>
             <p className="font-bold text-[#C4D7D1] lg:w-[60%]">{i.text}</p>
+            <Button title="Conocer" type="green" className="self-start" href={`/contacto?service=${encodeURIComponent(`Programas: "${i.title}"`)}&message=${encodeURIComponent(`¡Hola! Me gustaría saber todo acerca del programa "${i.title}"`)}`} />
           </div>
         </Viewport>
       </div>

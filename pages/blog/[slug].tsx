@@ -53,17 +53,24 @@ query PostQuery($slug: String) {
 
 export const getStaticProps: GetStaticProps = async (context: any) => {
   const { slug } = context.params
-  const { post } = await datoCMSFetcher<{ post: Post }>(query, { slug })
-  if (!post) {
+  try {
+    const { post } = await datoCMSFetcher<{ post: Post }>(query, { slug })
+    if (!post) {
+      return {
+        notFound: true
+      }
+    }
+    return {
+      props: {
+        post,
+      },
+      revalidate: 1,
+    }
+
+  } catch {
     return {
       notFound: true
     }
-  }
-  return {
-    props: {
-      post,
-    },
-    revalidate: 1,
   }
 }
 

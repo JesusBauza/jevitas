@@ -56,12 +56,18 @@ query {
 }
 `
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const data = await datoCMSFetcher<{ posts: Post[] }>(query)
+export const getStaticProps: GetStaticProps<BlogData> = async (context: any) => {
+  let props: BlogData = {
+    categories: [],
+    posts: [],
+  }
+  try {
+    props = await datoCMSFetcher(query)
+  } catch (err) {
+    console.error(err)
+  }
   return {
-    props: {
-      ...data,
-    },
+    props,
     revalidate: 1,
   }
 }

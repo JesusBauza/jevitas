@@ -8,6 +8,11 @@
   color: #3763eb;
 }
 
+.green {
+  background-color: #C4D7D1;
+  color: white;
+}
+
 .secondary:hover {
   background-color: #3763eb;
   color: white;

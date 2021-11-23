@@ -11,7 +11,7 @@ enum loadingColor {
 
 declare type Url = string | UrlObject
 
-export type ButtonType = 'primary' | 'secondary' | 'vintage' | 'pink'
+export type ButtonType = 'primary' | 'secondary' | 'vintage' | 'pink' | 'green'
 
 export type ButtonProps = {
   loading?: boolean
