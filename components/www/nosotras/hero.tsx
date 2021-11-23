@@ -25,10 +25,10 @@ const Hero = () => {
       >
         <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
           <h1 className="animate text-2xl lg:text-2xl xl:text-4xl font-title">
-            En Jevitas Intensas somos una <br className="hidden lg:block" />
-            comunidad que acompaña a mujeres <br className="hidden lg:block" />
-            hispanas a descubrir su propósito de <br className="hidden lg:block" />
-            vida, emprender online y a ocupar <br className="hidden lg:block" />
+            En Jevitas Intensas somos una
+            comunidad que acompaña a mujeres
+            hispanas a descubrir su propósito de
+            vida, emprender online y a ocupar
             espacios con sus ideas.
           </h1>
         </div>
