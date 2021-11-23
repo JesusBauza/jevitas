@@ -3,11 +3,12 @@ import Viewport, { setAnim } from '@/components/viewport'
 import { use100vh } from 'react-div-100vh'
 import Intensidades from '@/public/images/intensidades.png'
 import Image from 'next/image'
+import IframeResizer from 'iframe-resizer-react'
 
 const Podcast = () => {
   const sH = use100vh()
   return (
-    <div className="bg-white w-full">
+    <div className="bg-white w-full flex flex-col py-16">
       <Viewport
         className="flex flex-col-reverse pt-8 pb-4 c-lg items-center lg:flex-row lg:space-x-16 lg:py-0 xl:min-h-[var(--min-h)] relative"
         style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 84px)` }}
@@ -46,6 +47,13 @@ const Podcast = () => {
             podcast, de intensidades y dudas.
           </p>
         </div>
+      </Viewport>
+      <Viewport className="c-lg animate" style={setAnim({ y: '0.2rem' })} oneWay>
+        <IframeResizer
+          heightCalculationMethod="lowestElement"
+          src="https://anchor.fm/jevitasintensas/embed"
+          style={{ width: '100%', minWidth: '100%' }}
+        />
       </Viewport>
     </div>
   )
