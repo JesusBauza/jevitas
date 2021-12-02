@@ -1,0 +1,8 @@
+@screen lg {
+  .contents {
+    direction: rtl;
+  }
+  .contents > * {
+    direction: ltr;
+  }
+}
