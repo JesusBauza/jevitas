@@ -82,7 +82,7 @@ const Content = () => (
         </div>
 
         <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-          <Button title="Comenzar" className="lg:text-2xl" href="/cita/formulario" type="green" />
+          <Button title="Comenzar" className="lg:text-2xl" href="/cita/reservar" type="green" />
         </div>
       </Viewport>
     </div>
