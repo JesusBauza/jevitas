@@ -17,8 +17,10 @@ import Mail from '../svg/mail.svg'
 
 export default function Navbar({
   canonical,
+  navbarColor
 }: {
   canonical?: boolean
+  navbarColor?: string
 }) {
   const [sidebar, setSidebar] = useState(false)
   const toggleSidebar = () => (setSidebar(!sidebar))
@@ -31,7 +33,7 @@ export default function Navbar({
 
   return (
     <>
-      <header className={`${s.header}`}>
+      <header className={`${s.header}`} style={{ backgroundColor: navbarColor }}>
         <Sidebar open={sidebar} toggle={toggleSidebar} />
         <div className={`${s.headerWrapper} c-lg`}>
           <div className="flex pointer-events-auto items-center">

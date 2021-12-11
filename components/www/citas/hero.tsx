@@ -25,7 +25,7 @@ const Hero = () => {
             cuando lo necesites
           </p>
           <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-            <Button title="Inicia ahora" href="/cita/reservar" type="orange" />
+            <Button title="Inicia ahora" href="/citas/reservar" type="orange" />
           </div>
         </div>
         <div className="flex w-full animate lg:w-1/2 justify-center relative" style={setAnim({ d: '400ms', y: '-0.5rem', x: '-0.5rem' })}>

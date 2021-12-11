@@ -53,7 +53,7 @@ const Contacto = () => (
         {links.map((l, idx) => (
           <div className="flex flex-col space-y-4 font-title" key={idx}>
             <h5 className="text-2xl sm:text-2xl text-[#fdd2a7]">{l.title}:</h5>
-            <a href={l.href} className="text-white text-2xl sm:text-2xl hover:underline">{l.text}</a>
+            <a href={l.href} className="text-white text-2xl font-sans font-bold sm:text-2xl hover:underline">{l.text}</a>
           </div>
         ))}
       </div>

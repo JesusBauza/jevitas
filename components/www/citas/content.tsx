@@ -64,7 +64,7 @@ const Content = () => (
           <div className="flex flex-col space-y-4 items-center animate">
             <h2 className="text-center text-2xl text-white animate">Cita individual</h2>
             <p className="text-[#556876] text-center animate text-4xl sm:text-6xl">
-              $23,57 USD
+              $26,99 USD
             </p>
             <p className="text-center text-white text-lg">de 50 minutos por videollamada</p>
           </div>
@@ -82,7 +82,7 @@ const Content = () => (
         </div>
 
         <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-          <Button title="Comenzar" className="lg:text-2xl" href="/cita/reservar" type="green" />
+          <Button title="Comenzar" className="lg:text-2xl" href="/citas/reservar" type="green" />
         </div>
       </Viewport>
     </div>
