@@ -1,12 +1,20 @@
 import { NextApiHandler } from "next";
 import sgMail, { MailDataRequired } from '@sendgrid/mail'
+import { datoCMSFetcher } from "@/lib/fetcher";
 
 const handler: NextApiHandler = async (req, res) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
   const { name, email, service, message } = JSON.parse(req.body)
+  const { sgData } = await datoCMSFetcher(`{
+    sgData: token {
+      apiKey: sgApiKey
+      from: sgSenderEmail
+      to: sgDestiny
+    }
+  }`)
+  sgMail.setApiKey(sgData.apiKey)
   const msg: MailDataRequired = {
-    to: 'jevitasintensas@gmail.com', // Change to your recipient
-    from: 'sender@jevitasintensas.com', // Change to your verified sender
+    to: sgData.to, // Change to your recipient
+    from: sgData.from, // Change to your verified sender
     subject: service,
     replyTo: { email, name }, 
     html: `<h1>

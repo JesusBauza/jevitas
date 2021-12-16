@@ -16,7 +16,7 @@ const Welcome = () => {
           style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 97px)`, perspective: 1000 }}
         >
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '0.5rem' })}>
-            <h1 className="animate text-3xl xl:text-5xl font-title text-fg-secondary">
+            <h1 className="animate text-3xl xl:text-5xl font-title text-[#4E4C4D]">
               Hola! Soy Annella,
             </h1>
             <div className="space-y-6">

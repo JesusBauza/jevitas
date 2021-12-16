@@ -16,7 +16,7 @@ const Acompa = () => <div className="space-y-8 lg:space-y-0 bg-white py-16 lg:py
       <Image src={AcompaImg} title="Formaciones y acompañamiento" placeholder="blur" className="w-full rounded-[2rem] lg:rounded-none pointer-events-none select-none" quality={100} />
     </div>
     <div className="w-full lg:w-1/2 flex flex-col items-center text-center space-y-6">
-      <h3 className="animate text-3xl xl:text-5xl font-title text-fg-secondary">
+      <h3 className="animate text-3xl xl:text-5xl font-title text-[#4E4C4D]">
         Formaciones y <br className="hidden lg:block" />
         acompañamiento
       </h3>
@@ -35,7 +35,7 @@ const Acompa = () => <div className="space-y-8 lg:space-y-0 bg-white py-16 lg:py
       <Image src={Ideas} title="Laboratorio de ideas" placeholder="blur" className="w-full rounded-[2rem] lg:rounded-none pointer-events-none select-none" quality={100} />
     </div>
     <div className="w-full lg:w-1/2 flex flex-col items-center text-center space-y-6">
-      <h3 className="animate text-3xl xl:text-5xl font-title text-fg-secondary">
+      <h3 className="animate text-3xl xl:text-5xl font-title text-[#4E4C4D]">
         Laboratorio <br className="hidden lg:block" />
         de ideas
       </h3>

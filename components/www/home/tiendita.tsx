@@ -38,13 +38,13 @@ const Tiendita = () => {
   return (
     data?.products ? (
       <>
-        <div className="bg-[#FDD2A7] w-full relative">
+        <div className="bg-white w-full relative">
           <Viewport
             className="flex flex-col justify-center items-center space-y-16 min-h-[var(--min-h)] c-lg py-16"
             style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 97px)`, perspective: 1000 }}
           >
             <div className="flex flex-col space-y-8 w-full text-center" style={setAnim({ y: '0.5rem' })}>
-              <h3 className="animate text-3xl xl:text-5xl font-title text-fg-secondary">
+              <h3 className="animate text-3xl xl:text-5xl font-title text-[#4E4C4D]">
                 Nuestra tiendita
               </h3>
               <p className="animate" style={setAnim({ d: '100ms' })}>

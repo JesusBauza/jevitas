@@ -22,6 +22,7 @@ const Nosotras: PageWithLayout = () => {
 
 Nosotras.getLayoutProps = (() => ({
   title: 'Nosotras',
+  navbarColor: '#fdd2a7',
 }))
 
 export default Nosotras

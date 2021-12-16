@@ -3,6 +3,7 @@ import Viewport, { setAnim } from '@/components/viewport'
 import { use100vh } from 'react-div-100vh'
 import Intensidades from '@/public/images/intensidades.png'
 import Image from 'next/image'
+import Cover from './svg/podcast.svg'
 import IframeResizer from 'iframe-resizer-react'
 
 const Podcast = () => {
@@ -14,7 +15,8 @@ const Podcast = () => {
         style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 84px)` }}
       >
         <div className="flex w-full pb-8 pt-16 animate lg:py-0 lg:w-1/2 justify-center relative" style={setAnim({ d: '400ms', y: '-0.5rem', x: '-0.5rem' })}>
-          <Image src={Intensidades} placeholder="blur" className="w-full" />
+          <Cover className="w-full" />
+          {/* <Image src={Intensidades} placeholder="blur" className="w-full" /> */}
         </div>
         <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
           <div className="flex flex-col">

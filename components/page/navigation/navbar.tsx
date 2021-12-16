@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useState } from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 import Link from '@/components/canonical-link'
 import Sidebar from './sidebar'
 import Dropdown from './dropdown'
@@ -27,17 +27,32 @@ export default function Navbar({
   const globalData = useGlobalDataContext()
   const isCanonical = useCanonical()
 
-  const { query, pathname } = useRouter()
+  const { pathname } = useRouter()
+
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handler = () => {
+      setScrollY(window.scrollY)
+    }
+    handler()
+    window.addEventListener('scroll', handler)
+    return () => {
+      window.removeEventListener('scroll', handler)
+    }
+  }, [])
 
   const isActive = useCallback((path: string) => path === '/' ? path === pathname : pathname.startsWith(path), [pathname])
 
   return (
     <>
-      <header className={`${s.header}`} style={{ backgroundColor: navbarColor }}>
+      <header className={`${s.header} ${scrollY > 0 ? s.shadow : ''}`} style={{ backgroundColor: navbarColor }}>
         <Sidebar open={sidebar} toggle={toggleSidebar} />
         <div className={`${s.headerWrapper} c-lg`}>
           <div className="flex pointer-events-auto items-center">
-            <h1 className="font-bold font-title text-xl text-fg-primary transform transition-transform duration-200 select-none sm:text-4xl hover:scale-95">
+            <h1 className="font-bold font-title text-xl text-fg-primary transform transition-transform duration-200 select-none sm:text-4xl hover:scale-95" style={{
+              ['--logo-fill' as any]: '#4E4C4D'
+            }}>
               <Link title="Jevitas Intensas" href="/">
                 <LogoSVG className="w-[100px] sm:w-[130px]" />
               </Link>

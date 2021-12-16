@@ -4,7 +4,10 @@
 	top: 0;
 	width: 100%;
 	height: 84px;
-	transition: 0.5s transform;
+	transition: 0.5s transform, 0.2s box-shadow;
+}
+
+.shadow {
 	box-shadow: 0 20px 50px 0 rgb(0 0 0 / 5%);
 }
 
@@ -31,7 +34,7 @@
 	align-items: center;
 	@apply mx-4;
 	height: 100%;
-	transition: color .3s ease-out 0s;
+	transition: color 0.3s ease-out 0s;
 	@apply font-bold;
 }
 
@@ -43,7 +46,7 @@
 	content: "";
 	position: absolute;
 	@apply bg-fg-secondary;
-	transition: all .3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
 	opacity: 0;
 	width: 0px;
 	height: 3px;
@@ -51,7 +54,8 @@
 	left: 0;
 }
 
-.element:hover.element::before, .element.active.element::before {
+.element:hover.element::before,
+.element.active.element::before {
 	width: 100%;
 	opacity: 1;
 }

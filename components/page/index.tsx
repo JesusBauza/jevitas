@@ -151,7 +151,7 @@ export const PageLayout = (pageProps: PageProps) => {
     brandTitle,
     description,
     globalData,
-    navbarColor = '#fdd2a7',
+    navbarColor = '#FFF0E3',
     ...rest
   } = pageProps
 

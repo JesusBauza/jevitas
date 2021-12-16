@@ -1,10 +1,7 @@
 import { Button } from '@/components/button'
 import Viewport, { setAnim } from '@/components/viewport'
 import { use100vh } from 'react-div-100vh'
-import Annella from '@/public/images/welcome.png'
-import Image from 'next/image'
 import HeroSVG from './svg/hero.svg'
-import Wave from '@/components/wave'
 
 const Hero = () => {
   const sH = use100vh()
@@ -15,7 +12,7 @@ const Hero = () => {
         style={{ ['--min-h' as string]: `calc(${sH ? sH + 'px' : '100vh'} - 84px)` }}
       >
         <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
-          <h1 className="animate text-5xl font-title text-white">
+          <h1 className="animate  text-5xl xl:text-6xl font-title text-white">
             Recupera tu <br />
             bienestar emocional
           </h1>

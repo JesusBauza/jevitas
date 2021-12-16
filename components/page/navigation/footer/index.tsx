@@ -1,5 +1,6 @@
 import CanonicalLink from '@/components/canonical-link'
 import LogoSVG from '@/public/images/logo.svg'
+import Sun from '../../svg/sol.svg'
 
 const links = [
   {
@@ -38,7 +39,8 @@ const links = [
 
 const Footer = () => (
   <footer className="w-full bg-[#d98c24] py-24 flex flex-col space-y-16 lg: space-y-10">
-    <div className="c-lg flex flex-col lg:flex-row items-center">
+    <div className="c-lg flex flex-col lg:flex-row items-center relative">
+      <Sun className="absolute right-[-3rem] top-[-5rem] hidden lg:block" />
       <div className="w-full items-center flex lg:items-start flex-col space-y-8" style={{ ['--logo-fill' as string]: 'white' }}>
         <LogoSVG className="w-1/2" />
         <p className="text-sm font-bold hidden lg:block">Made By <a href="" target="_blank" className="hover:underline">Marketing Shakers</a></p>
