@@ -22,10 +22,10 @@ const Banner2 = () => {
         >
           <div className="flex flex-col space-y-8 w-full lg:w-2/3 py-8" style={setAnim({ y: '0.5rem' })}>
             <h1 className="animate text-3xl xl:text-5xl font-title text-white" dangerouslySetInnerHTML={{
-          __html: banners.bannerB.replaceAll('\n', '<br class="hidden lg:block" />')
+          __html: banners?.bannerB?.replaceAll('\n', '<br class="hidden lg:block" />')
         }} />
             <div className="animate" style={setAnim({ d: '100ms', y: '0.5rem' })}>
-              <Button href={banners.bannerBLink} type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
+              <Button href={banners?.bannerBLink} type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
             </div>
           </div>
           <div className="flex w-full pt-16 animate lg:py-0 lg:w-1/3 justify-center items-end" style={setAnim({ d: '400ms', y: '0.5rem' })}>

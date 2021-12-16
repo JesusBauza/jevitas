@@ -35,12 +35,12 @@ const Hero = () => {
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
             <h1
               className="animate text-5xl xl:text-7xl font-title text-fg-primary"
-              dangerouslySetInnerHTML={{ __html: hero.title.replaceAll('\n', '<br/>') }}
+              dangerouslySetInnerHTML={{ __html: hero?.title?.replaceAll('\n', '<br/>') }}
             />
             <p
               className="animate font-bold"
               style={setAnim({ d: '100ms' })}
-              dangerouslySetInnerHTML={{ __html: hero.subtitle.replaceAll('\n', '<br/>') }}
+              dangerouslySetInnerHTML={{ __html: hero?.subtitle?.replaceAll('\n', '<br/>') }}
             />
             <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
               <Button title="Conócenos" href="/contacto" />
@@ -54,7 +54,7 @@ const Hero = () => {
         >
           <h2
             className="font-title text-fg-primary text-xl w-full lg:w-1/2"
-            dangerouslySetInnerHTML={{ __html: hero.text.replaceAll('\n', '<br/>') }}
+            dangerouslySetInnerHTML={{ __html: hero?.text?.replaceAll('\n', '<br/>') }}
           />
         </Viewport>
       </Viewport>
