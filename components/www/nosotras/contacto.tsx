@@ -28,8 +28,8 @@ const links = [
   },
   {
     title: 'WhatsApp',
-    text: 'wa.link/yuyqis',
-    href: 'https://wa.link/yuyqis'
+    text: 'wa.me/+584249612612',
+    href: 'https://wa.me/+584249612612'
   },
   {
     title: 'Podcast',

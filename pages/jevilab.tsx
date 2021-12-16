@@ -14,6 +14,7 @@ const JeviLab: PageWithLayout = () => {
 JeviLab.getLayoutProps = (() => ({
   title: 'JeviLab',
   navbarColor: '#F0AD9D',
+  logoColor: 'white',
 }))
 
 export default JeviLab

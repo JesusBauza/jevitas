@@ -3,8 +3,10 @@ import Viewport, { setAnim } from '@/components/viewport'
 import Img from './svg/banner2.svg'
 import Fig1 from './svg/banner2-fig1.svg'
 import Fig2 from './svg/banner2-fig2.svg'
+import { useHomeData } from '@/pages'
 
 const Banner2 = () => {
+  const { banners } = useHomeData()
   return (
     <>
       <div className="bg-[#d98c24] w-full overflow-hidden relative">
@@ -19,13 +21,11 @@ const Banner2 = () => {
           style={{ perspective: 1000 }}
         >
           <div className="flex flex-col space-y-8 w-full lg:w-2/3 py-8" style={setAnim({ y: '0.5rem' })}>
-            <h1 className="animate text-3xl xl:text-5xl font-title text-white">
-              Acompáñanos en el detrás <br className="hidden lg:block" />
-              de escenas de Jevitas Intensas y <br className="hidden lg:block" />
-              recibe nuestras carticas mensuales
-            </h1>
+            <h1 className="animate text-3xl xl:text-5xl font-title text-white" dangerouslySetInnerHTML={{
+          __html: banners.bannerB.replaceAll('\n', '<br class="hidden lg:block" />')
+        }} />
             <div className="animate" style={setAnim({ d: '100ms', y: '0.5rem' })}>
-              <Button href="http://eepurl.com/dxQwXT" type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
+              <Button href={banners.bannerBLink} type="vintage" title="Únete a la comunidad" className="uppercase mr-auto" />
             </div>
           </div>
           <div className="flex w-full pt-16 animate lg:py-0 lg:w-1/3 justify-center items-end" style={setAnim({ d: '400ms', y: '0.5rem' })}>

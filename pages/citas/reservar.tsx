@@ -72,6 +72,7 @@ const Reservar: PageWithLayout = () => {
   const { data } = useDatoCMSApi(`{
     paypalData: token {
       clientId: paypalClientId
+      cost
     }
   }`)
   const submit = useCallback(async (e) => {
@@ -132,12 +133,15 @@ const Reservar: PageWithLayout = () => {
                   <div className="z-10">
                     <ButtonWrapper
                       currency="USD"
-                      amount={26.99}
+                      amount={data.paypalData.cost}
                       onSucess={setOrderId}
                       showSpinner={false}
                     />
                   </div>
-                  <p className="text-xl text-right"><span className="font-bold">Monto: </span> $26,99 US</p>
+                  <p className="text-xl text-right"><span className="font-bold">Monto: </span> ${parseFloat(data.paypalData.cost).toLocaleString('es', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })} US</p>
                 </PayPalScriptProvider>
               ) : (
                 <>
@@ -222,6 +226,7 @@ const Reservar: PageWithLayout = () => {
 Reservar.getLayoutProps = (() => ({
   title: 'Reservar cita',
   navbarColor: '#C4D7D1',
+  logoColor: 'white',
 }))
 
 export default Reservar

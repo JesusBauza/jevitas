@@ -32,6 +32,7 @@ export interface PageProps extends OgImageProps, SeoTagsProps {
   globalData?: any
   host?: string
   navbarColor?: string
+  logoColor?: string
   children?: ReactNode
 }
 
@@ -152,6 +153,7 @@ export const PageLayout = (pageProps: PageProps) => {
     description,
     globalData,
     navbarColor = '#FFF0E3',
+    logoColor,
     ...rest
   } = pageProps
 
@@ -165,7 +167,7 @@ export const PageLayout = (pageProps: PageProps) => {
         description={description || (globalData?.SEODescription || layout?.titleName)}
       />
       <div className="flex flex-col min-h-screen w-full page-layout relative">
-        {(navbar) && <Navbar canonical={canonical} navbarColor={navbarColor} />}
+        {(navbar) && <Navbar canonical={canonical} navbarColor={navbarColor} logoColor={logoColor} />}
         <main
           className="flex-grow flex justify-start items-stretch content-stretch"
         >

@@ -17,10 +17,12 @@ import Mail from '../svg/mail.svg'
 
 export default function Navbar({
   canonical,
-  navbarColor
+  navbarColor,
+  logoColor,
 }: {
   canonical?: boolean
   navbarColor?: string
+  logoColor?: string
 }) {
   const [sidebar, setSidebar] = useState(false)
   const toggleSidebar = () => (setSidebar(!sidebar))
@@ -51,7 +53,7 @@ export default function Navbar({
         <div className={`${s.headerWrapper} c-lg`}>
           <div className="flex pointer-events-auto items-center">
             <h1 className="font-bold font-title text-xl text-fg-primary transform transition-transform duration-200 select-none sm:text-4xl hover:scale-95" style={{
-              ['--logo-fill' as any]: '#4E4C4D'
+              ['--logo-fill' as any]: logoColor || '#4E4C4D'
             }}>
               <Link title="Jevitas Intensas" href="/">
                 <LogoSVG className="w-[100px] sm:w-[130px]" />

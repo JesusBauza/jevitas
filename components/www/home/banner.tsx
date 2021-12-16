@@ -1,9 +1,11 @@
 import Parallax from '@/components/parallax'
 import Viewport, { setAnim } from '@/components/viewport'
+import { useHomeData } from '@/pages'
 import Bg from '@/public/images/banner.png'
 import Image from 'next/image'
 
 const Banner = () => {
+  const { banners } = useHomeData()
   return (
     <div className="bg-[#f0be69] py-24 relative overflow-hidden">
       <Parallax className="absolute w-full h-full -mt-8" scaleFactor={8}>
@@ -14,7 +16,7 @@ const Banner = () => {
         style={{ perspective: 1000, ...setAnim({ y: '0.5rem' }) }}
         oneWay
       >
-        <style jsx>{`
+        <style jsx global>{`
         .underlined {
           position: relative;
         }
@@ -29,11 +31,9 @@ const Banner = () => {
           bottom: 0.3rem;
         }
         `}</style>
-        <h2 className="font-title text-2xl sm:text-5xl w-full lg:w-1/2 text-[#f8f3ef]">
-          Elegimos el bienestar, <br />
-          un corazón contento y <br />
-          <span className="text-fg-secondary underlined">una dosis de intensidad</span>
-        </h2>
+        <h2 className="font-title text-2xl sm:text-5xl w-full lg:w-1/2 text-[#f8f3ef]" dangerouslySetInnerHTML={{
+          __html: banners.bannerA
+        }} />
       </Viewport>
     </div>
   )

@@ -9,9 +9,11 @@ import Cloud from './svg/nube.svg'
 import Gotas from './svg/gotas.svg'
 import Eye from './svg/ojo.svg'
 import Image from 'next/image'
+import { useHomeData } from '@/pages'
 
 const Hero = () => {
   const sH = use100vh()
+  const { hero } = useHomeData()
   return (
     <>
       <Viewport className="relative overflow-hidden" style={{ perspective: 1000 }}>
@@ -31,14 +33,15 @@ const Hero = () => {
             <Image src={Annella} placeholder="blur" quality={100} />
           </div>
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
-            <h1 className="animate text-5xl xl:text-7xl font-title text-fg-primary">
-              Bienvenidas<br />a Jevitas Intensas
-            </h1>
-            <p className="animate font-bold" style={setAnim({ d: '100ms' })}>
-              Una comunidad que acompaña a mujeres hispanas a <br />
-              descubrir su propósito de vida, emprender online y a ocupar <br />
-              espacios con sus ideas.
-            </p>
+            <h1
+              className="animate text-5xl xl:text-7xl font-title text-fg-primary"
+              dangerouslySetInnerHTML={{ __html: hero.title.replaceAll('\n', '<br/>') }}
+            />
+            <p
+              className="animate font-bold"
+              style={setAnim({ d: '100ms' })}
+              dangerouslySetInnerHTML={{ __html: hero.subtitle.replaceAll('\n', '<br/>') }}
+            />
             <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
               <Button title="Conócenos" href="/contacto" />
             </div>
@@ -49,11 +52,10 @@ const Hero = () => {
           style={{ perspective: 1000, ...setAnim({ y: '0.5rem' }) }}
           oneWay
         >
-          <h2 className="font-title text-fg-primary text-xl w-full lg:w-1/2">
-            Nuestra intención es que más mujeres puedan vivir una vida
-            creativa, inspirada y con ganas de explorarse a sí mismas para
-            transformarse ellas y a su entorno
-          </h2>
+          <h2
+            className="font-title text-fg-primary text-xl w-full lg:w-1/2"
+            dangerouslySetInnerHTML={{ __html: hero.text.replaceAll('\n', '<br/>') }}
+          />
         </Viewport>
       </Viewport>
     </>
