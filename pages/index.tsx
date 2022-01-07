@@ -10,15 +10,28 @@ import Welcome from '@www/home/welcome'
 import { GetStaticProps } from 'next'
 import { createContext, useContext } from 'react'
 
+type Color = {
+  hex: string
+}
+
 export type HomeData = {
+  page: {
+    color: Color
+  }
   hero: {
     title: string
     subtitle: string
     text: string
+    colorTitle?: Color
+    colorText?: Color
+    colorBg?: Color
   }
   welcome: {
     title: string
     text: string
+    colorTitle?: Color
+    colorText?: Color
+    colorBg?: Color
   }
   banners: {
     bannerA: string
@@ -35,10 +48,24 @@ export const getStaticProps: GetStaticProps<HomeData> = async (context: any) => 
   let props: HomeData
   try {
     props = await datoCMSFetcher(`{
+      page: home {
+        color {
+          hex
+        }
+      }
       hero: home {
         title: heroTitle
         subtitle: heroSubtitle
         text: heroText
+        colorTitle: heroColorTitle {
+          hex
+        }
+        colorText: heroColorText {
+          hex
+        }
+        colorBg: heroColorBg {
+          hex
+        }
       }
       welcome: home {
         title: welcomeTitle
@@ -80,4 +107,7 @@ const Index: PageWithLayout<HomeData> = (props) => {
   )
 }
 
+Index.getLayoutProps = (props) => ({
+  navbarColor: props.page.color.hex,
+})
 export default Index

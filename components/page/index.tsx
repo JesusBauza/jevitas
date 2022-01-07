@@ -12,6 +12,8 @@ import { BrandLayoutProvider, useBrandLayout } from '@/models/page/brand-layout/
 import { hexToRgb } from '@/models/common/color'
 import { DarkModeProvider, useDarkMode } from '@/lib/dark-mode'
 import { getAbsoluteURL } from '@/lib/utils/client'
+import { Dialog } from '@headlessui/react'
+import Contacto from '../contacto'
 
 export type GetLayoutProps<T = PageProps> = (props: T) => PageProps
 
@@ -84,6 +86,7 @@ export const PageColors = ({ brandLayout, children }: { brandLayout?: IBrandLayo
     }
     return tmp
   }, [fonts])
+
   return (
     <>
       {filteredFonts?.length ? (
@@ -143,6 +146,9 @@ export const PageColors = ({ brandLayout, children }: { brandLayout?: IBrandLayo
   )
 }
 
+export const contactContext = createContext<any>(null)
+export const useContact = () => useContext(contactContext)
+
 export const PageLayout = (pageProps: PageProps) => {
   const {
     navbar = true,
@@ -159,25 +165,65 @@ export const PageLayout = (pageProps: PageProps) => {
 
   const [layout] = useBrandLayout()
 
+  let [isOpen, setIsOpen] = useState(false)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  const fonts = useFonts()
+
   return (
-    <PageColors>
-      <SeoTags
-        {...rest}
-        brandTitle={brandTitle || layout?.titleName}
-        description={description || (globalData?.SEODescription || layout?.titleName)}
-      />
-      <div className="flex flex-col min-h-screen w-full page-layout relative">
-        {(navbar) && <Navbar canonical={canonical} navbarColor={navbarColor} logoColor={logoColor} />}
-        <main
-          className="flex-grow flex justify-start items-stretch content-stretch"
+    <contactContext.Provider value={[isOpen, setIsOpen]}>
+      <PageColors>
+        <SeoTags
+          {...rest}
+          brandTitle={brandTitle || layout?.titleName}
+          description={description || (globalData?.SEODescription || layout?.titleName)}
+        />
+        <div className="flex flex-col min-h-screen w-full page-layout relative">
+          {(navbar) && <Navbar canonical={canonical} navbarColor={navbarColor} logoColor={logoColor} />}
+          <main
+            className="flex-grow flex justify-start items-stretch content-stretch"
+          >
+            <div className="w-full">
+              {children}
+            </div>
+          </main>
+          {footer && <Footer />}
+        </div>
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-[9999] overflow-y-auto h-screen font-sans"
+          onClose={closeModal}
+          open={isOpen}
         >
-          <div className="w-full">
-            {children}
+          <div className="relative">
+            <Dialog.Overlay className="fixed inset-0 opacity-30 bg-black w-full h-full" />
+
+
+            <style jsx>{`
+      .page-layout {
+        --brand-font-title: ${fonts?.title};
+        --brand-font-sans: ${fonts?.sans};
+      }
+      `}</style>
+            <div className="flex min-h-screen items-center justify-center w-full font-sans page-layout">
+              <div className="transform w-full p-4">
+                <div className="overflow-hidden rounded-2xl">
+                  <Contacto cerrar />
+                </div>
+              </div>
+            </div>
+
           </div>
-        </main>
-        {footer && <Footer />}
-      </div>
-    </PageColors>
+        </Dialog>
+      </PageColors>
+    </contactContext.Provider>
   )
 }
 
@@ -211,10 +257,10 @@ const Page = (pageProps: PageProps) => {
           }
           `}</style>
 
-          <Favicons />
+          {/* <Favicons /> */}
 
           <PageLayout {...pageProps}>
-              {children}
+            {children}
           </PageLayout>
         </BrandLayoutProvider>
       </DarkModeProvider>

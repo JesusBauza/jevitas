@@ -34,12 +34,13 @@ const Hero = () => {
           </div>
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '1rem' })}>
             <h1
-              className="animate text-5xl xl:text-7xl font-title text-fg-primary"
+              className="animate text-5xl xl:text-7xl font-title"
               dangerouslySetInnerHTML={{ __html: hero.title.replace(/\n/g, '<br/>') }}
+              style={{ color: hero.colorTitle?.hex || 'rgb(var(--brand-fg-primary))' }}
             />
             <p
               className="animate font-bold"
-              style={setAnim({ d: '100ms' })}
+              style={{ ...setAnim({ d: '100ms' }), color: hero.colorText?.hex || 'unset' }}
               dangerouslySetInnerHTML={{ __html: hero?.subtitle?.replace(/\n/g, '<br/>') }}
             />
             <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
