@@ -7,6 +7,8 @@ import s from './content.module.css'
 import Viewport, { setAnim } from '@/components/viewport'
 import { Button } from '@/components/button'
 import { useProgramsData } from '@/pages/programas'
+import ReactTypingEffect from 'react-typing-effect';
+
 
 const items = () => [
   {
@@ -70,11 +72,37 @@ const Content = () => {
           className="flex flex-col space-y-6 items-center text-center bg-[#F0AD9D] p-8 lg:p-12 lg:pt-6 rounded-[40px] animate"
           style={setAnim({ d: '200ms' })}
         >
-          <Sol className="animate" style={setAnim({ d: '400ms' })} />
-          <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
-            Me encantó ya que ahora tengo un poco más claro mi propósito gracias a esta experiencia maravillosa y a la motivación que nos dio Ann durante estos 10 días. Pienso activar mi emprendimiento con la ayuda que me brindó Ann con estas 10 lecciones, ahora me siento capaz de empezar.
-          </p>
-          <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>Maria Gabriela Domínguez - Panamá</p>
+        <ReactTypingEffect
+          speed={20}
+          eraseSpeed={10}
+          text={data.testimonios.map(t => t.testimonio)}
+          cursor=" "
+          cursorClassName="h"
+          typingDelay={0}
+          displayTextRenderer={(text, idx) => {
+            return (
+              <div
+                className="flex flex-col space-y-6 items-center"
+                style={setAnim({ d: '200ms' })}
+              >
+                <Sol className="animate" style={setAnim({ d: '400ms' })} />
+                <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
+                  {text.split('').map((char, i) => {
+                    const key = `${i}`;
+                    return (
+                      <span
+                        key={key}
+                      >{char}</span>
+                    );
+                  })}
+                </p>
+                <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>
+                  {data.testimonios[idx].autor}
+                </p>
+              </div>
+            );
+          }}
+        />
         </div>
       </Viewport >
     </div >

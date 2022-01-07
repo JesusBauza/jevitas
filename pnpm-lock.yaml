@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@carbon/icons-react': ^10.29.0
       '@ecwid/nextjs-ecwid-plugin': ^0.1.1
+      '@headlessui/react': ^1.4.2
       '@paypal/react-paypal-js': ^7.5.0
       '@react-three/drei': ^7.4.0
       '@react-three/fiber': ^7.0.6
@@ -68,7 +69,9 @@ importers:
       react-responsive-embed: ^2.1.0
       react-spotify-player: ^1.0.4
       react-table: ^7.7.0
+      react-text-carousel: ^0.1.1
       react-toggle-dark-mode: ^1.0.4
+      react-typing-effect: ^2.0.5
       request: ^2.88.2
       sass: ^1.32.8
       sharp: ^0.29.1
@@ -89,6 +92,7 @@ importers:
     dependencies:
       '@carbon/icons-react': 10.34.0_react@17.0.1
       '@ecwid/nextjs-ecwid-plugin': 0.1.1_da809bfeddfa5818c0e35a1a7546cb3f
+      '@headlessui/react': 1.4.2_react-dom@17.0.1+react@17.0.1
       '@paypal/react-paypal-js': 7.5.0_react-dom@17.0.1+react@17.0.1
       '@react-three/drei': 7.4.0_205acd952c50f2c6d245408e65bdf014
       '@react-three/fiber': 7.0.6_5df6fed6183548b81ef0226f24ab7b47
@@ -127,7 +131,9 @@ importers:
       react-responsive-embed: 2.1.0_react@17.0.1
       react-spotify-player: 1.0.4
       react-table: 7.7.0_react@17.0.1
+      react-text-carousel: 0.1.1_react-dom@17.0.1+react@17.0.1
       react-toggle-dark-mode: 1.0.4_205acd952c50f2c6d245408e65bdf014
+      react-typing-effect: 2.0.5
       request: 2.88.2
       sass: 1.32.8
       sharp: 0.29.1
@@ -2675,6 +2681,17 @@ packages:
     deprecated: This version has been deprecated and is no longer supported or maintained
     dependencies:
       '@hapi/hoek': 8.5.1
+    dev: false
+
+  /@headlessui/react/1.4.2_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-N8tv7kLhg9qGKBkVdtg572BvKvWhmiudmeEpOCyNwzOsZHCXBtl8AazGikIfUS+vBoub20Fse3BjawXDVPPdug==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
     dev: false
 
   /@icons/material/0.2.4_react@17.0.1:
@@ -11872,6 +11889,18 @@ packages:
       react: 17.0.1
     dev: false
 
+  /react-dom/16.14.0_react@16.14.0:
+    resolution: {integrity: sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==}
+    peerDependencies:
+      react: ^16.14.0
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 16.14.0
+      scheduler: 0.19.1
+    dev: false
+
   /react-dom/17.0.1_react@17.0.1:
     resolution: {integrity: sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==}
     peerDependencies:
@@ -12006,6 +12035,18 @@ packages:
       react: 17.0.1
     dev: false
 
+  /react-text-carousel/0.1.1_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha1-/+uMPHqMCW2YBKStXXBgYAJ0tQk=}
+    peerDependencies:
+      react: ^0.14.0
+      react-dom: ^0.14.0
+    dependencies:
+      lodash: 4.17.21
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+      react-typist: 0.3.0_react-dom@17.0.1+react@17.0.1
+    dev: false
+
   /react-three-fiber/0.0.0-deprecated:
     resolution: {integrity: sha512-EblIqTAsIpkYeM8bZtC4lcpTE0A2zCEGipFB52RgcQq/q+0oryrk7Sxt+sqhIjUu6xMNEVywV8dr74lz5yWO6A==}
     dev: false
@@ -12027,6 +12068,23 @@ packages:
       - react-zdog
       - three
       - zdog
+    dev: false
+
+  /react-typing-effect/2.0.5:
+    resolution: {integrity: sha512-IyVHASfzkdsWYw+/gvh2g1lwMf/ctpWhQHgMZHXQinKWxW8529XDhLGd9KTfnK5yUPLPaucdtA9GZFjIOjKCVg==}
+    dependencies:
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    dev: false
+
+  /react-typist/0.3.0_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha1-nYlVrgoqFRxe375DX3NdIA3693c=}
+    peerDependencies:
+      react: ^0.14
+      react-dom: ^0.14
+    dependencies:
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
     dev: false
 
   /react-use-measure/2.0.4_react-dom@17.0.1+react@17.0.1:
@@ -12624,6 +12682,13 @@ packages:
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+
+  /scheduler/0.19.1:
+    resolution: {integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
 
   /scheduler/0.20.2:
     resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}

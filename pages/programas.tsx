@@ -4,11 +4,17 @@ import Content from '@www/programas/content'
 import { GetStaticProps } from 'next'
 import { createContext, useContext } from 'react'
 
+export type Testimonio = {
+  autor: string
+  testimonio: string
+}
+
 export type ProgramsData = {
   ideas: string
   beYouMisma: string
   jeviretos: string
   jevicamp: string
+  testimonios?: Testimonio[]
 }
 
 export const getStaticProps: GetStaticProps<ProgramsData> = async (context: any) => {
@@ -20,6 +26,10 @@ export const getStaticProps: GetStaticProps<ProgramsData> = async (context: any)
         beYouMisma
         jeviretos
         jevicamp
+        testimonios { 
+          testimonio
+          autor
+        }
       }
     }`)).program
   } catch (err) {

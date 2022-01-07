@@ -10,13 +10,15 @@ import Gotas from './svg/gotas.svg'
 import Eye from './svg/ojo.svg'
 import Image from 'next/image'
 import { useHomeData } from '@/pages'
+import { useContact } from '@/components/page'
 
 const Hero = () => {
   const sH = use100vh()
   const { hero } = useHomeData()
+  const [_, setOpen] = useContact()
   return (
     <>
-      <Viewport className="relative overflow-hidden" style={{ perspective: 1000 }}>
+      <Viewport className="relative overflow-hidden" style={{ perspective: 1000, backgroundColor: hero.colorBg?.hex || 'unset' }}>
         <Flower className="absolute z-[1] w-6/10 lg:w-auto bottom-[16%] lg:bottom-[20%] animate" style={setAnim({ d: '600ms', y: '0.5rem', x: '-0.5rem' })} />
         <Fig1 className="absolute z-[1] w-6/10 hidden xl:block lg:w-auto top-0 animate" style={setAnim({ d: '600ms', y: '-0.5rem', x: '-0.5rem' })} />
         <Eye className="absolute hidden xl:block lg:w-auto top-0 right-0 animate" style={setAnim({ d: '100ms', y: '-0.5rem' })} />
@@ -44,7 +46,7 @@ const Hero = () => {
               dangerouslySetInnerHTML={{ __html: hero?.subtitle?.replace(/\n/g, '<br/>') }}
             />
             <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-              <Button title="Conócenos" href="/contacto" />
+              <Button title="Conócenos" onClick={() => setOpen(true) } />
             </div>
           </div>
         </Viewport>
@@ -54,7 +56,8 @@ const Hero = () => {
           oneWay
         >
           <h2
-            className="font-title text-fg-primary text-xl w-full lg:w-1/2"
+            className="font-title text-xl w-full lg:w-1/2"
+            style={{ color: hero.colorTitle?.hex || 'rgb(var(--brand-fg-primary))' }}
             dangerouslySetInnerHTML={{ __html: hero?.text?.replace(/\n/g, '<br/>') }}
           />
         </Viewport>

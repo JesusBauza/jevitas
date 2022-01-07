@@ -5,9 +5,11 @@ import Annella from '@/public/images/welcome.png'
 import Image from 'next/image'
 import HeroSVG from './svg/hero.svg'
 import Wave from '@/components/wave'
+import { useContact } from '@/components/page'
 
 const Hero = () => {
   const sH = use100vh()
+  const [_, setOpen] = useContact()
   return (
     <Viewport
       className="flex flex-col pt-8 pb-4 c-lg items-center lg:flex-row lg:space-x-16 lg:py-0 xl:min-h-[var(--min-h)] relative z-10"
@@ -26,7 +28,7 @@ const Hero = () => {
           ocupar un espacio dentro del ecosistema digital.
         </p>
         <div className="animate font-bold" style={setAnim({ d: '200ms' })}>
-          <Button title="Conoce nuestros servicios" href="/contacto" type="pink" />
+          <Button title="Conoce nuestros servicios" onClick={() => setOpen(true)} type="pink" />
         </div>
       </div>
       <div className="flex w-full animate lg:w-1/2 justify-center relative" style={setAnim({ d: '400ms', y: '-0.5rem', x: '-0.5rem' })}>

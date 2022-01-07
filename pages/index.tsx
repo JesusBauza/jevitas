@@ -70,6 +70,15 @@ export const getStaticProps: GetStaticProps<HomeData> = async (context: any) => 
       welcome: home {
         title: welcomeTitle
         text: welcomeText
+        colorTitle: welcomeColorTitle {
+          hex
+        }
+        colorText: welcomeColorText {
+          hex
+        }
+        colorBg: welcomeColorBg {
+          hex
+        }
       }
       banners: home {
         bannerA

@@ -1,5 +1,9 @@
 @tailwind components;
 
+.h {
+	display: hidden;
+}
+
 .c,
 .c-lg {
 	@apply px-6;
