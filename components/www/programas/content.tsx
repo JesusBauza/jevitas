@@ -9,7 +9,7 @@ import { Button } from '@/components/button'
 import { useProgramsData } from '@/pages/programas'
 import dynamic from 'next/dynamic'
 
-const ReactTypingEffect = dynamic(
+const ReactTypingEffect: any = dynamic(
   () => import('react-typing-effect'),
   { ssr: false }
 )
