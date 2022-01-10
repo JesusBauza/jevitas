@@ -7,8 +7,12 @@ import s from './content.module.css'
 import Viewport, { setAnim } from '@/components/viewport'
 import { Button } from '@/components/button'
 import { useProgramsData } from '@/pages/programas'
-import ReactTypingEffect from 'react-typing-effect';
+import dynamic from 'next/dynamic'
 
+const ReactTypingEffect: any = dynamic(
+  () => import('react-typing-effect'),
+  { ssr: false }
+)
 
 const items = () => [
   {
