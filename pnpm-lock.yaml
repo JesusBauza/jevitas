@@ -71,7 +71,7 @@ importers:
       react-table: ^7.7.0
       react-text-carousel: ^0.1.1
       react-toggle-dark-mode: ^1.0.4
-      react-typing-effect: ^2.0.5
+      react-typing-effect: github:lamyfarai/react-typing-effect
       request: ^2.88.2
       sass: ^1.32.8
       sharp: ^0.29.1
@@ -133,7 +133,7 @@ importers:
       react-table: 7.7.0_react@17.0.1
       react-text-carousel: 0.1.1_react-dom@17.0.1+react@17.0.1
       react-toggle-dark-mode: 1.0.4_205acd952c50f2c6d245408e65bdf014
-      react-typing-effect: 2.0.5
+      react-typing-effect: github.com/lamyfarai/react-typing-effect/853706f293d10a57c284c7cbda7139644e6d88a3
       request: 2.88.2
       sass: 1.32.8
       sharp: 0.29.1
@@ -12070,13 +12070,6 @@ packages:
       - zdog
     dev: false
 
-  /react-typing-effect/2.0.5:
-    resolution: {integrity: sha512-IyVHASfzkdsWYw+/gvh2g1lwMf/ctpWhQHgMZHXQinKWxW8529XDhLGd9KTfnK5yUPLPaucdtA9GZFjIOjKCVg==}
-    dependencies:
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-    dev: false
-
   /react-typist/0.3.0_react-dom@17.0.1+react@17.0.1:
     resolution: {integrity: sha1-nYlVrgoqFRxe375DX3NdIA3693c=}
     peerDependencies:
@@ -15150,4 +15143,13 @@ packages:
         optional: true
     dependencies:
       react: 17.0.1
+    dev: false
+
+  github.com/lamyfarai/react-typing-effect/853706f293d10a57c284c7cbda7139644e6d88a3:
+    resolution: {tarball: https://codeload.github.com/lamyfarai/react-typing-effect/tar.gz/853706f293d10a57c284c7cbda7139644e6d88a3}
+    name: react-typing-effect
+    version: 2.0.5
+    dependencies:
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
     dev: false

@@ -54,7 +54,7 @@
     "react-table": "^7.7.0",
     "react-text-carousel": "^0.1.1",
     "react-toggle-dark-mode": "^1.0.4",
-    "react-typing-effect": "^2.0.5",
+    "react-typing-effect": "github:lamyfarai/react-typing-effect",
     "request": "^2.88.2",
     "sass": "^1.32.8",
     "sharp": "^0.29.1",

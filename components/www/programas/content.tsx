@@ -39,6 +39,7 @@ const items = () => [
 
 const Content = () => {
   const data = useProgramsData()
+  console.log(data)
   return (
     <div className="flex-col space-y-24 pt-16 pb-24">
       {items().map((i, idx) => (
@@ -72,37 +73,39 @@ const Content = () => {
           className="flex flex-col space-y-6 items-center text-center bg-[#F0AD9D] p-8 lg:p-12 lg:pt-6 rounded-[40px] animate"
           style={setAnim({ d: '200ms' })}
         >
-        <ReactTypingEffect
-          speed={20}
-          eraseSpeed={10}
-          text={data.testimonios.map(t => t.testimonio)}
-          cursor=" "
-          cursorClassName="h"
-          typingDelay={0}
-          displayTextRenderer={(text, idx) => {
-            return (
-              <div
-                className="flex flex-col space-y-6 items-center"
-                style={setAnim({ d: '200ms' })}
-              >
-                <Sol className="animate" style={setAnim({ d: '400ms' })} />
-                <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
-                  {text.split('').map((char, i) => {
-                    const key = `${i}`;
-                    return (
-                      <span
-                        key={key}
-                      >{char}</span>
-                    );
-                  })}
-                </p>
-                <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>
-                  {data.testimonios[idx].autor}
-                </p>
-              </div>
-            );
-          }}
-        />
+          {typeof window !== 'undefined' ? (
+            <ReactTypingEffect
+              speed={20}
+              eraseSpeed={10}
+              text={data.testimonios.map(t => t.testimonio)}
+              cursor=" "
+              cursorClassName="h"
+              typingDelay={0}
+              displayTextRenderer={(text, idx) => {
+                return (
+                  <div
+                    className="flex flex-col space-y-6 items-center"
+                    style={setAnim({ d: '200ms' })}
+                  >
+                    <Sol className="animate" style={setAnim({ d: '400ms' })} />
+                    <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
+                      {text.split('').map((char, i) => {
+                        const key = `${i}`;
+                        return (
+                          <span
+                            key={key}
+                          >{char}</span>
+                        );
+                      })}
+                    </p>
+                    <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>
+                      {data.testimonios[idx].autor}
+                    </p>
+                  </div>
+                );
+              }}
+            />
+          ) : null}
         </div>
       </Viewport >
     </div >
