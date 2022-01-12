@@ -70,7 +70,9 @@ importers:
       react-spotify-player: ^1.0.4
       react-table: ^7.7.0
       react-text-carousel: ^0.1.1
+      react-text-transition: ^1.3.0
       react-toggle-dark-mode: ^1.0.4
+      react-transition-group: ^4.4.2
       react-typing-effect: github:lamyfarai/react-typing-effect
       request: ^2.88.2
       sass: ^1.32.8
@@ -132,7 +134,9 @@ importers:
       react-spotify-player: 1.0.4
       react-table: 7.7.0_react@17.0.1
       react-text-carousel: 0.1.1_react-dom@17.0.1+react@17.0.1
+      react-text-transition: 1.3.0_react-dom@17.0.1+react@17.0.1
       react-toggle-dark-mode: 1.0.4_205acd952c50f2c6d245408e65bdf014
+      react-transition-group: 4.4.2_react-dom@17.0.1+react@17.0.1
       react-typing-effect: github.com/lamyfarai/react-typing-effect/853706f293d10a57c284c7cbda7139644e6d88a3
       request: 2.88.2
       sass: 1.32.8
@@ -6663,6 +6667,13 @@ packages:
       esutils: 2.0.3
     dev: true
 
+  /dom-helpers/5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
+    dependencies:
+      '@babel/runtime': 7.15.3
+      csstype: 3.0.8
+    dev: false
+
   /dom-serializer/0.2.2:
     resolution: {integrity: sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==}
     dependencies:
@@ -12006,6 +12017,18 @@ packages:
       prop-types: ^15.5.10
     dev: false
 
+  /react-spring/8.0.27_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==}
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+    dependencies:
+      '@babel/runtime': 7.15.3
+      prop-types: 15.7.2
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+
   /react-spring/9.2.4_205acd952c50f2c6d245408e65bdf014:
     resolution: {integrity: sha512-bMjbyTW0ZGd+/h9cjtohLqCwOGqX2OuaTvalOVfLCGmhzEg/u3GgopI3LAm4UD2Br3MNdVdGgNVoESg4MGqKFQ==}
     dependencies:
@@ -12047,6 +12070,17 @@ packages:
       react-typist: 0.3.0_react-dom@17.0.1+react@17.0.1
     dev: false
 
+  /react-text-transition/1.3.0_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-RzMFH4K1Ez8yGeT2n1FgGfP3VY2x1z6wX3CBzj3xweFVkPzRHmYOfyO1fT2mWSgFebq4bZ0RJ1qWurfNu3Pqrw==}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      react: 17.0.1
+      react-spring: 8.0.27_react-dom@17.0.1+react@17.0.1
+    transitivePeerDependencies:
+      - react-dom
+    dev: false
+
   /react-three-fiber/0.0.0-deprecated:
     resolution: {integrity: sha512-EblIqTAsIpkYeM8bZtC4lcpTE0A2zCEGipFB52RgcQq/q+0oryrk7Sxt+sqhIjUu6xMNEVywV8dr74lz5yWO6A==}
     dev: false
@@ -12068,6 +12102,20 @@ packages:
       - react-zdog
       - three
       - zdog
+    dev: false
+
+  /react-transition-group/4.4.2_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    dependencies:
+      '@babel/runtime': 7.15.3
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.7.2
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
     dev: false
 
   /react-typist/0.3.0_react-dom@17.0.1+react@17.0.1:

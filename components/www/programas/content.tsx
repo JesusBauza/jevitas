@@ -8,6 +8,8 @@ import Viewport, { setAnim } from '@/components/viewport'
 import { Button } from '@/components/button'
 import { useProgramsData } from '@/pages/programas'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+import { CSSTransition, SwitchTransition } from "react-transition-group"
 
 const ReactTypingEffect: any = dynamic(
   () => import('react-typing-effect'),
@@ -43,7 +45,16 @@ const items = () => [
 
 const Content = () => {
   const data = useProgramsData()
-  console.log(data)
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIndex(index => index + 1)
+    },
+      5000
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
   return (
     <div className="flex-col space-y-24 pt-16 pb-24">
       {items().map((i, idx) => (
@@ -78,37 +89,38 @@ const Content = () => {
           style={setAnim({ d: '200ms' })}
         >
           {typeof window !== 'undefined' ? (
-            <ReactTypingEffect
-              speed={20}
-              eraseSpeed={10}
-              text={data.testimonios.map(t => t.testimonio)}
-              cursor=" "
-              cursorClassName="h"
-              typingDelay={0}
-              displayTextRenderer={(text, idx) => {
-                return (
-                  <div
-                    className="flex flex-col space-y-6 items-center"
-                    style={setAnim({ d: '200ms' })}
+            <div
+              className="flex flex-col space-y-6 items-center"
+              style={setAnim({ d: '200ms' })}
+            >
+              <Sol className="animate" style={setAnim({ d: '400ms' })} />
+              <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
+                <SwitchTransition mode="out-in">
+                  <CSSTransition
+                    classNames="fade"
+                    addEndListener={(node, done) => {
+                      node.addEventListener("transitionend", done, false);
+                    }}
+                    key={data.testimonios[index % data.testimonios.length].testimonio}
                   >
-                    <Sol className="animate" style={setAnim({ d: '400ms' })} />
-                    <p className="text-lg lg:text-xl lg:w-[80%] font-title text-[#4E4C4D] animate" style={setAnim({ d: '600ms' })}>
-                      {text.split('').map((char, i) => {
-                        const key = `${i}`;
-                        return (
-                          <span
-                            key={key}
-                          >{char}</span>
-                        );
-                      })}
-                    </p>
-                    <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>
-                      {data.testimonios[idx].autor}
-                    </p>
-                  </div>
-                );
-              }}
-            />
+                    <span>{data.testimonios[index % data.testimonios.length].testimonio}</span>
+                  </CSSTransition>
+                </SwitchTransition>
+              </p>
+              <p className="text-sm lg:text-base text-white font-title animate" style={setAnim({ d: '700ms' })}>
+                <SwitchTransition mode="out-in">
+                  <CSSTransition
+                    classNames="fade"
+                    addEndListener={(node, done) => {
+                      node.addEventListener("transitionend", done, false);
+                    }}
+                    key={data.testimonios[index % data.testimonios.length].autor}
+                  >
+                    <span>{data.testimonios[index % data.testimonios.length].autor}</span>
+                  </CSSTransition>
+                </SwitchTransition>
+              </p>
+            </div>
           ) : null}
         </div>
       </Viewport >
