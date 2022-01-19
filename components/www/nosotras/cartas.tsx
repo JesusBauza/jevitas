@@ -27,16 +27,16 @@ const cartas = () => [
       'A los 17 me escribí una carta para navidad. De esas en las que uno se marca resoluciones, se dice lo que no nos atrevemos a decir en voz alta y aceptamos quienes somos y lo que debemos mejorar.',
     ]
   },
-  {
-    img: Img3,
-    text: [
-      'Mi abuela siempre me regañó por eso diciendo “siempre haces lo que quieres, ¿cómo se te ocurre nacer de pie, si todo el mundo nace de cabeza?”. Lo siento abuela, literalmente no tenía uso de razón. Hoy la extraño un montón, a ella y a sus regaños.',
-      'Después de ahí, todo fue relativamente “normal”, aunque siempre he hecho las cosas al revés. Primero lo hago, después aprendo.',
-      'A los 9 años descubrí el Diario de Anna Frank, yo que también escribía diarios, me sentí muy identificada y decidí hacerlo formalmente. Ese libro me ayudó a entender que nuestras palabras trascienden y que aun no estando en la misma situación, siempre vivimos cosas iguales.',
-      'Así empecé a agarrar viejos cuadernos del colegio y los convertí en mis retazos de historias y experiencias, ese mismo año decidí que sería periodista. A los 13 años empecé a tener contacto con las redes sociales y un año después abrí mi primer blog, ahí empezó mi descubrimiento y mi diario pasó de ser en papel a ser en digital, fue una transición de la Annella del colegio, a la Annella en la universidad.',
-      'A los 17 me escribí una carta para navidad. De esas en las que uno se marca resoluciones, se dice lo que no nos atrevemos a decir en voz alta y aceptamos quienes somos y lo que debemos mejorar.',
-    ]
-  },
+  // {
+  //   img: Img3,
+  //   text: [
+  //     'Mi abuela siempre me regañó por eso diciendo “siempre haces lo que quieres, ¿cómo se te ocurre nacer de pie, si todo el mundo nace de cabeza?”. Lo siento abuela, literalmente no tenía uso de razón. Hoy la extraño un montón, a ella y a sus regaños.',
+  //     'Después de ahí, todo fue relativamente “normal”, aunque siempre he hecho las cosas al revés. Primero lo hago, después aprendo.',
+  //     'A los 9 años descubrí el Diario de Anna Frank, yo que también escribía diarios, me sentí muy identificada y decidí hacerlo formalmente. Ese libro me ayudó a entender que nuestras palabras trascienden y que aun no estando en la misma situación, siempre vivimos cosas iguales.',
+  //     'Así empecé a agarrar viejos cuadernos del colegio y los convertí en mis retazos de historias y experiencias, ese mismo año decidí que sería periodista. A los 13 años empecé a tener contacto con las redes sociales y un año después abrí mi primer blog, ahí empezó mi descubrimiento y mi diario pasó de ser en papel a ser en digital, fue una transición de la Annella del colegio, a la Annella en la universidad.',
+  //     'A los 17 me escribí una carta para navidad. De esas en las que uno se marca resoluciones, se dice lo que no nos atrevemos a decir en voz alta y aceptamos quienes somos y lo que debemos mejorar.',
+  //   ]
+  // },
   {
     img: Img4,
     text: [
