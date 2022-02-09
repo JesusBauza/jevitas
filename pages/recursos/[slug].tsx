@@ -114,6 +114,8 @@ export const Slug: PageWithLayout<{ resource: Resource }> = (fallbackData) => {
           <Image
             data={data.resource.cover.responsiveImage}
             fadeInDuration={600}
+            layout="fill"
+            objectFit="cover"
             className="w-full h-full"
             pictureClassName="object-cover"
           />
