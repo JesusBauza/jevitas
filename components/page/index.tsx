@@ -257,7 +257,7 @@ const Page = (pageProps: PageProps) => {
           }
           `}</style>
 
-          {/* <Favicons /> */}
+          <Favicons />
 
           <PageLayout {...pageProps}>
             {children}
