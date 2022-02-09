@@ -126,6 +126,8 @@ export const Slug: PageWithLayout<{ post: Post }> = (postFallback) => {
           <Image
             data={data.post.cover.responsiveImage}
             fadeInDuration={600}
+            layout="fill"
+            objectFit="cover"
             className="w-full h-full"
             pictureClassName="object-cover"
           />

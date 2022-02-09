@@ -53,6 +53,8 @@ const Hero = (fallbackData: { categories: Category[] }) => {
           <Image
             data={categoryData.cover.responsiveImage}
             fadeInDuration={600}
+            layout="fill"
+            objectFit="cover"
             className="w-full h-full"
             pictureClassName="object-cover"
           />
