@@ -25,6 +25,7 @@ const buildPath = (pathname: string, params: any) => {
 const OgImage = ({ image, host = getDefaultHost() }: OgImageProps) => {
   const { pathname, query } = useRouter()
   if (!image) {
+    return null
     const searchParams = new URLSearchParams()
     searchParams.set('path', buildPath(pathname, query))
     // Open Graph & Twitter images need a full URL including domain
