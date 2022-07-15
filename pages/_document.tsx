@@ -16,6 +16,13 @@ class MyDocument extends Document {
   gtag('js', new Date());
 
   gtag('config', 'G-6DBQ695085');`}} />
+
+<meta property="fb:pages" content="1828485257382835" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6386501791573221"
+     crossorigin="anonymous"></script>
+
+
         </Head>
         <body>
           <script>0</script>
