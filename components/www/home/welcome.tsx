@@ -21,8 +21,8 @@ const Welcome = () => {
         >
           <div className="flex flex-col space-y-8 w-full lg:w-1/2" style={setAnim({ y: '0.5rem' })}>
             <h1
-              className="animate text-3xl xl:text-5xl font-title text-[#4E4C4D]"
-              style={{ color: welcome.colorTitle?.hex || '#4E4C4D' }}
+              className="animate text-3xl xl:text-5xl font-title text-[#EB5153]"
+              style={{ color: welcome.colorTitle?.hex || '#EB5153' }}
             >
               {welcome.title}
             </h1>
