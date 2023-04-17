@@ -7,7 +7,7 @@ import Image from 'next/image'
 const Banner = () => {
   const { banners } = useHomeData()
   return (
-    <div className="bg-[#f0be69] py-24 relative overflow-hidden">
+    <div className="bg-[#EB5153] py-24 relative overflow-hidden">
       <Parallax className="absolute w-full h-full -mt-8" scaleFactor={8}>
         <Image title="" className="w-full h-full object-cover select-none pointer-events-none" layout="fill" src={Bg} quality={100} />
       </Parallax>
