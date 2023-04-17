@@ -47,7 +47,7 @@ const Hero = (fallbackData: { categories: Category[] }) => {
   }, [])
   const categoryData = useMemo(() => categories?.find(c => c.slug === category as string), [categories, category])
   return (
-    <div className="flex items-center flex-col h-[70vh] bg-[#F0BE69] justify-center relative">
+    <div className="flex items-center flex-col h-[70vh] bg-[#EB5153] justify-center relative">
       {categories && category && category != 'offtopic' && categoryData?.cover ? (
         <div className="absolute w-full h-full overflow-hidden">
           <Image
