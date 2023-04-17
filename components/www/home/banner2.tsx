@@ -9,7 +9,7 @@ const Banner2 = () => {
   const { banners } = useHomeData()
   return (
     <>
-      <div className="bg-[#d98c24] w-full overflow-hidden relative">
+      <div className="bg-[#EB5153] w-full overflow-hidden relative">
         <div className="absolute flex w-full h-full items-center">
           <Fig1 />
         </div>
