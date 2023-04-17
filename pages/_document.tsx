@@ -20,7 +20,7 @@ class MyDocument extends Document {
 <meta property="fb:pages" content="1828485257382835" />
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6386501791573221"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
 
 
         </Head>
